@@ -36,6 +36,14 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+# local workspace files
+.codex/
+.idea/
+.tmp-reactnative-llms.txt
+expo-docs-cn.html
+react-native-docs-cn.html
+assets/images/sticker-smash-assets.zip
+
 example
 
 # generated native folders
