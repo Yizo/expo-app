@@ -18,7 +18,7 @@
 ```text
 START_URL = https://docs.expo.dev/tutorial/introduction.md
 BASE_URL = https://docs.expo.dev/tutorial
-PROMPT_TEMPLATE = ../Prompt.md
+PROMPT_TEMPLATE = ./Prompt.md
 OUTPUT_DIR = ../learn/
 ```
 
@@ -74,7 +74,7 @@ visitedUrls.push(currentUrl)
 读取提示词模板文件：
 
 ```text
-../Prompt.md
+./Prompt.md
 ```
 
 该文件中存在变量：
@@ -315,7 +315,7 @@ currentUrl
 
 ### 2. Prompt.md 的职责
 
-`../Prompt.md` 只负责定义“单篇文档如何生成学习文档”。
+`./Prompt.md` 只负责定义“单篇文档如何生成学习文档”。
 
 它不负责：
 
@@ -400,7 +400,7 @@ while currentUrl is valid:
 
     visitedUrls.push(currentUrl)
 
-    prompt = read("../Prompt.md")
+    prompt = read("./Prompt.md")
     prompt = prompt.replace("{{url}}", currentUrl)
 
     content = generateMarkdown(prompt)
