@@ -38,7 +38,7 @@ export default function HomeScreen() {
 					<ThemedView style={styles.heroSection}>
 						<AnimatedIcon />
 						<ThemedText type="title" style={styles.title}>
-							Welcome to&nbsp;Expo-123
+							Welcome to&nbsp;
 						</ThemedText>
 					</ThemedView>
 
