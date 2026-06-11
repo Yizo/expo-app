@@ -7,117 +7,125 @@
 // @run-at       document-idle
 // ==/UserScript==
 
-;(function () {
-  'use strict'
+(function () {
+	"use strict";
 
-  const START_URL = 'https://docs.expo.dev/workflow/overview/'
+	const KEY_RESULT = "expo_docs_result";
+	const KEY_RUNNING = "expo_docs_running";
+	const KEY_DONE = "expo_docs_done";
+	const KEY_AUTO = "expo_docs_auto";
+	const KEY_START_URL = "expo_docs_start_url";
+	const KEY_ACTIVE = "expo_docs_active";
 
-  const KEY_RESULT = 'expo_docs_result'
-  const KEY_RUNNING = 'expo_docs_running'
-  const KEY_DONE = 'expo_docs_done'
-  const KEY_AUTO = 'expo_docs_auto'
+	const JUMP_DELAY = 300;
 
-  const JUMP_DELAY = 3000
+	const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+	function cleanUrl(url = location.href) {
+		const u = new URL(url, location.origin);
+		u.hash = "";
+		u.search = "";
+		return u.origin + u.pathname;
+	}
 
-  function cleanUrl(url = location.href) {
-    const u = new URL(url, location.origin)
-    u.hash = ''
-    u.search = ''
-    return u.origin + u.pathname
-  }
+	function toMdUrl(url) {
+		const clean = cleanUrl(url);
 
-  function toMdUrl(url) {
-    const clean = cleanUrl(url)
+		if (clean.endsWith("/")) {
+			return clean.slice(0, -1) + ".md";
+		}
 
-    if (clean.endsWith('/')) {
-      return clean.slice(0, -1) + '.md'
-    }
+		if (clean.endsWith(".md")) {
+			return clean;
+		}
 
-    if (clean.endsWith('.md')) {
-      return clean
-    }
+		return clean + ".md";
+	}
 
-    return clean + '.md'
-  }
+	function getResult() {
+		try {
+			return JSON.parse(localStorage.getItem(KEY_RESULT) || "[]");
+		} catch {
+			return [];
+		}
+	}
 
-  function getResult() {
-    try {
-      return JSON.parse(localStorage.getItem(KEY_RESULT) || '[]')
-    } catch {
-      return []
-    }
-  }
+	function setResult(result) {
+		localStorage.setItem(KEY_RESULT, JSON.stringify(result));
+	}
 
-  function setResult(result) {
-    localStorage.setItem(KEY_RESULT, JSON.stringify(result))
-  }
+	function getBool(key) {
+		return localStorage.getItem(key) === "true";
+	}
 
-  function getBool(key) {
-    return localStorage.getItem(key) === 'true'
-  }
+	function setBool(key, value) {
+		localStorage.setItem(key, value ? "true" : "false");
+	}
 
-  function setBool(key, value) {
-    localStorage.setItem(key, value ? 'true' : 'false')
-  }
+	function getStartUrl() {
+		return localStorage.getItem(KEY_START_URL);
+	}
 
-  function resetState() {
-    localStorage.removeItem(KEY_RESULT)
-    localStorage.removeItem(KEY_RUNNING)
-    localStorage.removeItem(KEY_DONE)
-    localStorage.removeItem(KEY_AUTO)
-  }
+	function isManuallyActivated() {
+		return sessionStorage.getItem(KEY_ACTIVE) === "true";
+	}
 
-  function addCurrentUrl() {
-    const current = cleanUrl()
-    const result = getResult()
+	function resetState() {
+		localStorage.removeItem(KEY_RESULT);
+		localStorage.removeItem(KEY_RUNNING);
+		localStorage.removeItem(KEY_DONE);
+		localStorage.removeItem(KEY_AUTO);
+	}
 
-    if (!result.includes(current)) {
-      result.push(current)
-      setResult(result)
-    }
-  }
+	function addCurrentUrl() {
+		const current = cleanUrl();
+		const result = getResult();
 
-  function getMdResult() {
-    return getResult().map(toMdUrl)
-  }
+		if (!result.includes(current)) {
+			result.push(current);
+			setResult(result);
+		}
+	}
 
-  function findNextLink() {
-    const containers = Array.from(document.querySelectorAll('[data-nosnippet]'))
+	function getMdResult() {
+		return getResult().map(toMdUrl);
+	}
 
-    for (const container of containers) {
-      const links = Array.from(container.querySelectorAll('a[href]'))
+	function findNextLink() {
+		const containers = Array.from(document.querySelectorAll("[data-nosnippet]"));
 
-      for (const link of links) {
-        const text = link.textContent.replace(/\s+/g, ' ').trim()
+		for (const container of containers) {
+			const links = Array.from(container.querySelectorAll("a[href]"));
 
-        if (/\bNext\b/i.test(text)) {
-          return link
-        }
-      }
-    }
+			for (const link of links) {
+				const text = link.textContent.replace(/\s+/g, " ").trim();
 
-    const allLinks = Array.from(document.querySelectorAll('a[href]'))
+				if (/\bNext\b/i.test(text)) {
+					return link;
+				}
+			}
+		}
 
-    for (const link of allLinks) {
-      const text = link.textContent.replace(/\s+/g, ' ').trim()
+		const allLinks = Array.from(document.querySelectorAll("a[href]"));
 
-      if (/\bNext\b/i.test(text)) {
-        return link
-      }
-    }
+		for (const link of allLinks) {
+			const text = link.textContent.replace(/\s+/g, " ").trim();
 
-    return null
-  }
+			if (/\bNext\b/i.test(text)) {
+				return link;
+			}
+		}
 
-  function renderPanel(message = '') {
-    let panel = document.querySelector('#expo-safe-collector-panel')
+		return null;
+	}
 
-    if (!panel) {
-      panel = document.createElement('div')
-      panel.id = 'expo-safe-collector-panel'
-      panel.style.cssText = `
+	function renderPanel(message = "") {
+		let panel = document.querySelector("#expo-safe-collector-panel");
+
+		if (!panel) {
+			panel = document.createElement("div");
+			panel.id = "expo-safe-collector-panel";
+			panel.style.cssText = `
         position: fixed;
         right: 16px;
         top: 16px;
@@ -133,24 +141,25 @@
         font-size: 12px;
         line-height: 1.5;
         font-family: Menlo, Monaco, Consolas, monospace;
-      `
+      `;
 
-      document.body.appendChild(panel)
-    }
+			document.body.appendChild(panel);
+		}
 
-    const result = getResult()
-    const mdUrls = getMdResult()
-    const running = getBool(KEY_RUNNING)
-    const auto = getBool(KEY_AUTO)
-    const done = getBool(KEY_DONE)
+		const result = getResult();
+		const mdUrls = getMdResult();
+		const running = getBool(KEY_RUNNING);
+		const auto = getBool(KEY_AUTO);
+		const done = getBool(KEY_DONE);
+		const currentUrl = isManuallyActivated() ? cleanUrl() : "未读取（点击启动后读取）";
 
-    panel.innerHTML = `
+		panel.innerHTML = `
       <div style="font-weight:bold;color:#93c5fd;margin-bottom:8px;">
         Expo Docs Safe Collector
       </div>
 
       <div style="margin-bottom:8px;">
-        当前页面：${cleanUrl()}
+        当前页面：${currentUrl}
       </div>
 
       <div style="margin-bottom:8px;">
@@ -158,7 +167,7 @@
       </div>
 
       <div style="margin-bottom:8px;color:#facc15;">
-        ${message || '等待操作'}
+        ${message || "等待操作"}
       </div>
 
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
@@ -179,138 +188,154 @@
         padding:8px;
         border-radius:4px;
         font-size:12px;
-      ">${mdUrls.join('\n')}</textarea>
-    `
+      ">${mdUrls.join("\n")}</textarea>
+    `;
 
-    panel.querySelectorAll('button').forEach((btn) => {
-      btn.style.cssText = `
+		panel.querySelectorAll("button").forEach((btn) => {
+			btn.style.cssText = `
         padding: 5px 8px;
         cursor: pointer;
         font-size: 12px;
-      `
-    })
+      `;
+		});
 
-    panel.querySelector('#expo-btn-start').onclick = () => {
-      setBool(KEY_RUNNING, true)
-      setBool(KEY_AUTO, true)
-      setBool(KEY_DONE, false)
+		panel.querySelector("#expo-btn-start").onclick = () => {
+			if (!isManuallyActivated()) {
+				localStorage.setItem(KEY_START_URL, cleanUrl());
+				sessionStorage.setItem(KEY_ACTIVE, "true");
+			}
 
-      if (cleanUrl() !== cleanUrl(START_URL) && getResult().length === 0) {
-        location.href = START_URL
-        return
-      }
+			setBool(KEY_RUNNING, true);
+			setBool(KEY_AUTO, true);
+			setBool(KEY_DONE, false);
 
-      renderPanel('已开始，3 秒后自动处理当前页面')
-      setTimeout(runOnce, 3000)
-    }
+			renderPanel("已手动启动，立即处理当前页面");
+			setTimeout(runOnce, JUMP_DELAY);
+		};
 
-    panel.querySelector('#expo-btn-pause').onclick = () => {
-      setBool(KEY_RUNNING, false)
-      setBool(KEY_AUTO, false)
-      renderPanel('已暂停，不会继续跳转')
-    }
+		panel.querySelector("#expo-btn-pause").onclick = () => {
+			setBool(KEY_RUNNING, false);
+			setBool(KEY_AUTO, false);
+			renderPanel("已暂停，不会继续跳转");
+		};
 
-    panel.querySelector('#expo-btn-step').onclick = () => {
-      setBool(KEY_RUNNING, true)
-      setBool(KEY_AUTO, false)
-      setBool(KEY_DONE, false)
-      runOnce()
-    }
+		panel.querySelector("#expo-btn-step").onclick = () => {
+			if (!isManuallyActivated()) {
+				renderPanel("请先点击“开始/继续自动收集”完成手动启动");
+				return;
+			}
 
-    panel.querySelector('#expo-btn-stop').onclick = () => {
-      setBool(KEY_RUNNING, false)
-      setBool(KEY_AUTO, false)
-      setBool(KEY_DONE, true)
-      renderPanel('已停止，结果已输出')
-    }
+			setBool(KEY_RUNNING, true);
+			setBool(KEY_AUTO, false);
+			setBool(KEY_DONE, false);
+			runOnce();
+		};
 
-    panel.querySelector('#expo-btn-reset').onclick = () => {
-      resetState()
-      location.href = START_URL
-    }
+		panel.querySelector("#expo-btn-stop").onclick = () => {
+			setBool(KEY_RUNNING, false);
+			setBool(KEY_AUTO, false);
+			setBool(KEY_DONE, true);
+			renderPanel("已停止，结果已输出");
+		};
 
-    panel.querySelector('#expo-btn-copy').onclick = async () => {
-      await navigator.clipboard.writeText(getMdResult().join('\n'))
-      renderPanel('已复制结果')
-    }
-  }
+		panel.querySelector("#expo-btn-reset").onclick = () => {
+			const startUrl = getStartUrl();
+			resetState();
 
-  async function runOnce() {
-    renderPanel('开始处理当前页面')
+			if (startUrl) {
+				location.href = startUrl;
+			} else {
+				renderPanel("请先手动启动，以记录当前页面为起始页");
+			}
+		};
 
-    addCurrentUrl()
-    renderPanel('已收集当前页，正在查找 Next 链接')
+		panel.querySelector("#expo-btn-copy").onclick = async () => {
+			await navigator.clipboard.writeText(getMdResult().join("\n"));
+			renderPanel("已复制结果");
+		};
+	}
 
-    const nextLink = findNextLink()
+	async function runOnce() {
+		renderPanel("开始处理当前页面");
 
-    if (!nextLink) {
-      setBool(KEY_RUNNING, false)
-      setBool(KEY_AUTO, false)
-      setBool(KEY_DONE, true)
-      renderPanel('未找到 Next，认为已到最后一页')
-      return
-    }
+		addCurrentUrl();
+		renderPanel("已收集当前页，正在查找 Next 链接");
 
-    const current = cleanUrl()
-    const nextUrl = cleanUrl(nextLink.href)
+		const nextLink = findNextLink();
 
-    if (nextUrl === current) {
-      setBool(KEY_RUNNING, false)
-      setBool(KEY_AUTO, false)
-      setBool(KEY_DONE, true)
-      renderPanel('Next 和当前页面相同，已停止，避免死循环')
-      return
-    }
+		if (!nextLink) {
+			setBool(KEY_RUNNING, false);
+			setBool(KEY_AUTO, false);
+			setBool(KEY_DONE, true);
+			renderPanel("未找到 Next，认为已到最后一页");
+			return;
+		}
 
-    renderPanel(`${JUMP_DELAY / 1000} 秒后跳转到：${nextUrl}`)
+		const current = cleanUrl();
+		const nextUrl = cleanUrl(nextLink.href);
 
-    await sleep(JUMP_DELAY)
+		if (nextUrl === current) {
+			setBool(KEY_RUNNING, false);
+			setBool(KEY_AUTO, false);
+			setBool(KEY_DONE, true);
+			renderPanel("Next 和当前页面相同，已停止，避免死循环");
+			return;
+		}
 
-    if (!getBool(KEY_RUNNING)) {
-      renderPanel('跳转前检测到已暂停，取消跳转')
-      return
-    }
+		renderPanel(`立即跳转到：${nextUrl}`);
 
-    location.href = nextUrl
-  }
+		await sleep(JUMP_DELAY);
 
-  async function main() {
-    await sleep(800)
+		if (!getBool(KEY_RUNNING)) {
+			renderPanel("跳转前检测到已暂停，取消跳转");
+			return;
+		}
 
-    renderPanel('脚本已加载')
+		location.href = nextUrl;
+	}
 
-    window.__expoCollector = {
-      getRawResult: getResult,
-      getMdResult,
-      getState() {
-        return {
-          result: getResult(),
-          mdResult: getMdResult(),
-          running: getBool(KEY_RUNNING),
-          auto: getBool(KEY_AUTO),
-          done: getBool(KEY_DONE),
-        }
-      },
-      pause() {
-        setBool(KEY_RUNNING, false)
-        setBool(KEY_AUTO, false)
-        renderPanel('已通过 Console 暂停')
-      },
-      reset() {
-        resetState()
-        renderPanel('已通过 Console 清空状态')
-      },
-    }
+	async function main() {
+		await sleep(800);
 
-    if (getBool(KEY_RUNNING) && getBool(KEY_AUTO)) {
-      renderPanel('检测到自动模式，3 秒后继续')
-      await sleep(3000)
+		if (!isManuallyActivated()) {
+			setBool(KEY_RUNNING, false);
+			setBool(KEY_AUTO, false);
+		}
 
-      if (getBool(KEY_RUNNING) && getBool(KEY_AUTO)) {
-        runOnce()
-      }
-    }
-  }
+		renderPanel("脚本已加载");
 
-  main()
-})()
+		window.__expoCollector = {
+			getRawResult: getResult,
+			getMdResult,
+			getState() {
+				return {
+					result: getResult(),
+					mdResult: getMdResult(),
+					running: getBool(KEY_RUNNING),
+					auto: getBool(KEY_AUTO),
+					done: getBool(KEY_DONE),
+				};
+			},
+			pause() {
+				setBool(KEY_RUNNING, false);
+				setBool(KEY_AUTO, false);
+				renderPanel("已通过 Console 暂停");
+			},
+			reset() {
+				resetState();
+				renderPanel("已通过 Console 清空状态");
+			},
+		};
+
+		if (isManuallyActivated() && getBool(KEY_RUNNING) && getBool(KEY_AUTO)) {
+			renderPanel("检测到本次手动启动的自动模式，立即继续");
+			await sleep(JUMP_DELAY);
+
+			if (getBool(KEY_RUNNING) && getBool(KEY_AUTO)) {
+				runOnce();
+			}
+		}
+	}
+
+	main();
+})();
