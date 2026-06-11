@@ -45,7 +45,7 @@
 
 ```tsx
 <Host matchContents>
-  <ZStack>{/* ... */}</ZStack>
+	<ZStack>{/* ... */}</ZStack>
 </Host>
 ```
 
@@ -98,20 +98,18 @@ bun expo install @expo/ui
 ## 基础重叠布局
 
 ```tsx
-import { Host, ZStack, Rectangle, Text } from '@expo/ui/swift-ui';
-import { frame, foregroundStyle } from '@expo/ui/swift-ui/modifiers';
+import { Host, ZStack, Rectangle, Text } from "@expo/ui/swift-ui";
+import { frame, foregroundStyle } from "@expo/ui/swift-ui/modifiers";
 
 export default function BasicZStackExample() {
-  return (
-    <Host matchContents>
-      <ZStack>
-        <Rectangle modifiers={[frame({ width: 100, height: 100 })]} />
-        <Text modifiers={[foregroundStyle({ color: 'white' })]}>
-          Overlay
-        </Text>
-      </ZStack>
-    </Host>
-  );
+	return (
+		<Host matchContents>
+			<ZStack>
+				<Rectangle modifiers={[frame({ width: 100, height: 100 })]} />
+				<Text modifiers={[foregroundStyle({ color: "white" })]}>Overlay</Text>
+			</ZStack>
+		</Host>
+	);
 }
 ```
 
@@ -135,15 +133,15 @@ modifiers={[
 
 本页使用了两个修饰器：
 
-| 修饰器 | 本页中的用途 |
-| --- | --- |
-| `frame(...)` | 指定视图的宽度和高度 |
+| 修饰器                 | 本页中的用途             |
+| ---------------------- | ------------------------ |
+| `frame(...)`           | 指定视图的宽度和高度     |
 | `foregroundStyle(...)` | 设置文字或图形的前景颜色 |
 
 修饰器需要从单独的入口导入：
 
 ```tsx
-import { frame, foregroundStyle } from '@expo/ui/swift-ui/modifiers';
+import { frame, foregroundStyle } from "@expo/ui/swift-ui/modifiers";
 ```
 
 当前文档只展示了这些修饰器的用法，没有完整解释修饰器的执行顺序、支持参数或布局规则。相关细节应查阅 SwiftUI modifiers 文档。
@@ -160,34 +158,26 @@ import { frame, foregroundStyle } from '@expo/ui/swift-ui/modifiers';
 
 文档列出的可用值包括：
 
-| 值 | 含义 |
-| --- | --- |
-| `center` | 居中 |
-| `leading` | 靠起始侧 |
-| `trailing` | 靠结束侧 |
-| `top` | 顶部 |
-| `bottom` | 底部 |
-| `topLeading` | 顶部起始侧 |
-| `topTrailing` | 顶部结束侧 |
-| `bottomLeading` | 底部起始侧 |
+| 值               | 含义       |
+| ---------------- | ---------- |
+| `center`         | 居中       |
+| `leading`        | 靠起始侧   |
+| `trailing`       | 靠结束侧   |
+| `top`            | 顶部       |
+| `bottom`         | 底部       |
+| `topLeading`     | 顶部起始侧 |
+| `topTrailing`    | 顶部结束侧 |
+| `bottomLeading`  | 底部起始侧 |
 | `bottomTrailing` | 底部结束侧 |
 
 示例：
 
 ```tsx
 <ZStack alignment="bottomTrailing">
-  <Rectangle
-    modifiers={[
-      frame({ width: 100, height: 100 }),
-      foregroundStyle({ color: 'blue' }),
-    ]}
-  />
-  <Circle
-    modifiers={[
-      frame({ width: 30, height: 30 }),
-      foregroundStyle({ color: 'red' }),
-    ]}
-  />
+	<Rectangle
+		modifiers={[frame({ width: 100, height: 100 }), foregroundStyle({ color: "blue" })]}
+	/>
+	<Circle modifiers={[frame({ width: 30, height: 30 }), foregroundStyle({ color: "red" })]} />
 </ZStack>
 ```
 
@@ -207,23 +197,23 @@ React Web 开发者可能会直接把：
 ## 创建角标覆盖效果
 
 ```tsx
-import { Host, ZStack, Circle, Image } from '@expo/ui/swift-ui';
-import { frame, foregroundStyle } from '@expo/ui/swift-ui/modifiers';
+import { Host, ZStack, Circle, Image } from "@expo/ui/swift-ui";
+import { frame, foregroundStyle } from "@expo/ui/swift-ui/modifiers";
 
 export default function ZStackBadgeExample() {
-  return (
-    <Host matchContents>
-      <ZStack alignment="topTrailing">
-        <Image systemName="bell.fill" size={32} color="blue" />
-        <Circle
-          modifiers={[
-            frame({ width: 16, height: 16 }),
-            foregroundStyle({ color: 'red' }),
-          ]}
-        />
-      </ZStack>
-    </Host>
-  );
+	return (
+		<Host matchContents>
+			<ZStack alignment="topTrailing">
+				<Image systemName="bell.fill" size={32} color="blue" />
+				<Circle
+					modifiers={[
+						frame({ width: 16, height: 16 }),
+						foregroundStyle({ color: "red" }),
+					]}
+				/>
+			</ZStack>
+		</Host>
+	);
 }
 ```
 
@@ -242,13 +232,13 @@ export default function ZStackBadgeExample() {
 导入方式：
 
 ```tsx
-import { ZStack } from '@expo/ui/swift-ui';
+import { ZStack } from "@expo/ui/swift-ui";
 ```
 
 组件类型：
 
 ```ts
-React.Element<ZStackProps>
+React.Element<ZStackProps>;
 ```
 
 这表示 `ZStack` 可以作为 React JSX 元素使用，其属性由 `ZStackProps` 定义。
@@ -268,7 +258,7 @@ alignment?: Alignment
 ### `children`
 
 ```ts
-children: React.ReactNode
+children: React.ReactNode;
 ```
 
 - 用于接收放入 `ZStack` 的 React 子节点。
@@ -298,9 +288,7 @@ CommonViewModifierProps
 虽然底层组件对应 SwiftUI，但示例仍然使用 TypeScript、React 和 JSX：
 
 ```tsx
-<ZStack alignment="topTrailing">
-  {/* SwiftUI-backed React components */}
-</ZStack>
+<ZStack alignment="topTrailing">{/* SwiftUI-backed React components */}</ZStack>
 ```
 
 本页没有要求创建 `.swift` 文件或直接修改 Xcode 工程。
@@ -392,5 +380,5 @@ CommonViewModifierProps
 
 ## 文档导航
 
-- **上一页**：[vstack](./115__vstack.md)
+- **上一页**：[usenativestate](./133__usenativestate.md)
 - **下一页**：[universal](./135__universal.md)

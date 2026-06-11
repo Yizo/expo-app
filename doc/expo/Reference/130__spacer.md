@@ -406,4 +406,4 @@ SwiftUI 的常见表达方式则是把空间也作为布局树中的一个元素
 ## 文档导航
 
 - **上一页**：[slider](./129__slider.md)
-- **下一页**：[swipeactions](./109__swipeactions.md)
+- **下一页**：[text](./131__text.md)

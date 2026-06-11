@@ -1,9 +1,9 @@
 # `useNativeState`：在 JavaScript 与 SwiftUI 之间共享可观察状态
 
-> 文档更新时间：2026 年 6 月 10 日  
-> 文档版本：下一版本 Expo SDK 的未发布文档  
-> 当前稳定版本：SDK 56  
-> 包名：`@expo/ui`  
+> 文档更新时间：2026 年 6 月 10 日
+> 文档版本：下一版本 Expo SDK 的未发布文档
+> 当前稳定版本：SDK 56
+> 包名：`@expo/ui`
 > 支持平台：iOS、tvOS；包含在 Expo Go 中
 
 ## 文档解决的问题
@@ -495,5 +495,5 @@ useCallback(() => {
 
 ## 文档导航
 
-- **上一页**：[toggle](./113__toggle.md)
-- **下一页**：[vstack](./115__vstack.md)
+- **上一页**：[textfield](./132__textfield.md)
+- **下一页**：[zstack](./134__zstack.md)

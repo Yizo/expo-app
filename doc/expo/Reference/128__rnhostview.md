@@ -463,5 +463,5 @@ Expo Go 包含该模块，只表示在受支持的平台上可以使用预置的
 
 ## 文档导航
 
-- **上一页**：[progressview](./102__progressview.md)
-- **下一页**：[scrollview](./104__scrollview.md)
+- **上一页**：[picker](./127__picker.md)
+- **下一页**：[slider](./129__slider.md)

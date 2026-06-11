@@ -508,5 +508,5 @@ Expo UI 的 Jetpack Compose `Slider` 让 React Native 代码可以控制 Android
 
 ## 文档导航
 
-- **上一页**：[shape](./62__shape.md)
-- **下一页**：[snackbar](./64__snackbar.md)
+- **上一页**：[bottomsheet](./118__bottomsheet.md)
+- **下一页**：[bottomsheet](./120__bottomsheet.md)
