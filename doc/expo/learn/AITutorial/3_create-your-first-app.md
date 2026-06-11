@@ -409,3 +409,8 @@ Agent 负责创建和修改代码，`npx expo start` 负责运行开发服务器
 完成本章后，你已经能够创建 Expo 应用、在手机上运行它，并通过自然语言提示让 Agent 完成第一次可见修改。
 
 下一章将基于这个空白页面继续添加导航标签、照片查看器和图片选择器。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：配置 Expo AI 开发工具](./2_set-up-your-tools.md) | [下一页：构建 StickerSmash 首页 →](./4_build-the-home-screen.md)
+<!-- NAVIGATION END -->

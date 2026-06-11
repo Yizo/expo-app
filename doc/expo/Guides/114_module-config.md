@@ -58,3 +58,7 @@ Android 平台专属配置：
 - **基于文档内容推导：** 类重命名或移动 Kotlin package 时同步更新配置，否则生成 provider 会引用错误名称。
 - 当前文档仅列出这些字段，未涉及 schema、默认值、校验命令、Web/devtools 的进一步配置、配置继承或完整示例工程。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Modules Shared Objects](./113_shared-objects.md) | [下一页：在 Expo Modules 中 Mock 原生调用 →](./115_mocking.md)
+<!-- NAVIGATION END -->

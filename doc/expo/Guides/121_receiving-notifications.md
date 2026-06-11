@@ -104,3 +104,7 @@ Android 用户可以修改系统级性能和电池优化设置，这些设置可
 
 本页未说明权限请求、token 获取的完整实现、后台 Headless task、深链导航方案、通知类别/按钮配置、服务端发送或送达回执。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：使用 Expo Push Service 发送通知](./120_sending-notifications.md) | [下一页：为 Android 推送配置 FCM V1 服务账号密钥 →](./122_fcm-credentials.md)
+<!-- NAVIGATION END -->

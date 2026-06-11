@@ -676,3 +676,8 @@ const imageSource = selectedImage
 ```
 
 本章只解决“从设备媒体库选择图片并显示”的问题；图片上传、持久化、权限处理和完整错误处理均未在当前文档中展开。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：使用 React Native 与 Expo 构建 StickerSmash 首屏](./3_build-a-screen.md) | [下一页：使用 React Native Modal 创建 Emoji 选择器 →](./5_create-a-modal.md)
+<!-- NAVIGATION END -->

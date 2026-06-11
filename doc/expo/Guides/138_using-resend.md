@@ -110,3 +110,8 @@ eas deploy --prod
 **文档明确说明：**敏感 Resend Key 必须留在服务端；客户端仅访问公开的 API Route 基础地址；API Route 依赖 Expo Router、`web.output: server` 与 EAS Hosting 部署流程。
 
 **基于文档内容推导：**移动应用不应直接调用 Resend，因为打包后的客户端无法安全保存长期服务端密钥。生产环境还应增加邮箱格式校验、速率限制、滥用防护、Resend 错误处理和明确的 HTTP 状态码，但这些内容当前文档未涉及。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 中使用 Supabase](./137_using-supabase.md) | [下一页：Expo 与 React Native 功能开关服务 →](./139_using-feature-flags.md)
+<!-- NAVIGATION END -->

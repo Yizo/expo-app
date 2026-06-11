@@ -233,3 +233,8 @@ Expo 自家库支持，并不代表所有第三方原生库都支持。
 - 新架构底层实现细节。
 - 如何重写一个不兼容的原生模块。
 - 每一个第三方库的完整兼容矩阵。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：iOS Simulator](./46_ios-simulator.md) | [下一页：React Compiler →](./48_react-compiler.md)
+<!-- NAVIGATION END -->

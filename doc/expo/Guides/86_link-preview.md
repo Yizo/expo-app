@@ -145,3 +145,8 @@ export default function Page() {
 
 - 这是一个“原生交互增强能力”，只有在 iOS 场景中才值得专门设计。
 - 预览内容、导航结构、交互动效需要一起评估，不能只看 API 是否可用。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Redirects](./85_redirects.md) | [下一页：Expo Router Typed Routes →](./87_typed-routes.md)
+<!-- NAVIGATION END -->

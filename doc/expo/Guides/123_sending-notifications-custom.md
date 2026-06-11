@@ -170,3 +170,7 @@ authorization: bearer {authorizationToken}
 
 本页未完整说明 FCM/APNs 全部 payload 字段、响应错误码、token 失效处理、批量发送、限流、重试、连接池实现和凭据轮换。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：为 Android 推送配置 FCM V1 服务账号密钥](./122_fcm-credentials.md) | [下一页：Expo 推送通知故障排查与常见问题 →](./124_faq.md)
+<!-- NAVIGATION END -->

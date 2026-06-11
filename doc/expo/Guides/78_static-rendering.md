@@ -189,3 +189,8 @@ npx expo export --platform web
 
 - 静态渲染更适合“可提前确定页面集合”的内容型项目。
 - 如果路由参数无法在构建时穷举，静态渲染会带来很大限制。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Server Headers](./77_server-headers.md) | [下一页：Expo Router Server Rendering →](./79_server-rendering.md)
+<!-- NAVIGATION END -->

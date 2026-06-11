@@ -177,3 +177,8 @@ Metro 的选择是：
 - Metro 与具体 Web bundler 的基准测试数据
 - 如何从其他 bundler 迁移到 Metro 的完整实操步骤
 - Metro 内部架构源码级分析
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Minifying JavaScript 学习整理](./29_minify.md) | [下一页：Expo 在现有 React Native 项目中的总览 →](./31_overview.md)
+<!-- NAVIGATION END -->

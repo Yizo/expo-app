@@ -194,3 +194,8 @@ eas env:create --name EXPO_USE_PRECOMPILED_MODULES --value 0 --visibility plaint
 - 预编译模块覆盖了哪些 Expo 包的完整清单
 - Android 侧的详细故障排查案例
 - 预编译与源码构建的具体性能对比数据
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Use build cache providers 学习整理](./18_cache-builds-remotely.md) | [下一页：Develop websites with Expo 学习整理 →](./20_web.md)
+<!-- NAVIGATION END -->

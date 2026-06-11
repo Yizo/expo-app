@@ -115,3 +115,8 @@ React Native 只需渲染统一组件并传三组颜色和比例：
 **基于文档内容推导**：包装第三方库时应先设计最小公共 TypeScript 契约，再分别实现平台适配，避免把某个平台专有 API 直接泄露给业务代码。
 
 **当前文档未涉及**：完整依赖版本代码、事件交互、错误处理、无障碍、Web 图表实现、许可证评估和自动测试。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在项目中使用独立 Expo Module](./103_use-standalone-expo-module-in-your-project.md) | [下一页：在现有 React Native 库中集成 Expo Modules API →](./105_existing-library.md)
+<!-- NAVIGATION END -->

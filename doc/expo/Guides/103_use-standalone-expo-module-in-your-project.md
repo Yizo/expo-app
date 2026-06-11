@@ -119,3 +119,8 @@ npx expo run:ios
 **基于文档内容推导**：内部多应用共享优先 monorepo；跨仓库或对外分发选择 registry；发布前可先用 tarball 模拟真实安装。
 
 **当前文档未涉及**：语义化版本、npm access/tag、自动发布、monorepo 工具选择、兼容性矩阵和原生二进制发布。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：创建带 Config Plugin 的 Expo 原生模块](./102_config-plugin-and-native-module-tutorial.md) | [下一页：用 Expo Modules API 包装第三方原生库 →](./104_third-party-library.md)
+<!-- NAVIGATION END -->

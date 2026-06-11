@@ -160,3 +160,8 @@ npx expo export --platform web
 - Expo Router 的具体路由写法
 - 静态渲染配置细节
 - SEO 优化具体策略
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Precompiled Expo Modules 学习整理](./19_prebuilt-expo-modules.md) | [下一页：Publish websites 学习整理 →](./21_publishing-websites.md)
+<!-- NAVIGATION END -->

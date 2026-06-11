@@ -161,3 +161,8 @@ npx expo export --clear
 
 - Async Routes 更适合页面量大、希望更细粒度按需加载的项目。
 - 如果不清缓存，开发者很容易误判配置无效或行为异常。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Server Rendering](./79_server-rendering.md) | [下一页：Expo Router 错误处理与加载状态 →](./81_error-handling.md)
+<!-- NAVIGATION END -->

@@ -148,3 +148,8 @@ eas update:configure
 
 - 当前文档未涉及发布更新命令的完整日常流程。
 - 当前文档未涉及回滚策略、灰度策略和版本治理细节。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：从 React Native CLI 迁移到 Expo CLI](./33_using-expo-cli.md) | [下一页：在现有 React Native 项目中安装 expo-dev-client →](./35_install-dev-builds-in-bare.md)
+<!-- NAVIGATION END -->

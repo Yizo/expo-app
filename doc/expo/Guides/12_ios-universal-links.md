@@ -148,3 +148,8 @@ web/.well-known/apple-app-site-association
 - 对面向真实用户的 iOS 链接入口，Universal Links 比单独自定义 scheme 更自然。
 - iOS 链接问题通常既可能出在网站部署，也可能出在 Apple 侧 Entitlement 配置。
 - 当前文档未展开应用内收到 Universal Link 后如何映射到具体路由，只提到应继续接入入站链接处理。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Android App Links](./11_android-app-links.md) | [下一页：Add custom native code →](./13_customizing.md)
+<!-- NAVIGATION END -->

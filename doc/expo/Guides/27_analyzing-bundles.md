@@ -203,3 +203,8 @@ npx lighthouse <url> --view
 - 如何依据 Atlas 结果具体重构代码
 - Core Web Vitals 的详细解读
 - 自动化把分析结果接入 CI 的完整方案
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Metro bundler 学习整理](./26_customizing-metro.md) | [下一页：Tree shaking and code removal 学习整理 →](./28_tree-shaking.md)
+<!-- NAVIGATION END -->

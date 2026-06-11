@@ -177,3 +177,8 @@
 - 各类特殊文件的完整 API 细节。
 - 跳转、参数读取、鉴权实现代码的完整模式。
 - Stack、Tabs、Drawer 的具体写法。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 文件路由核心概念](./51_core-concepts.md) | [下一页：Expo Router 的导航布局 →](./53_navigation-layouts.md)
+<!-- NAVIGATION END -->

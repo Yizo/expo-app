@@ -360,3 +360,8 @@ React Web 开发者虽然熟悉 CSS Flexbox，但需要注意：React Native 的
 4. 应用配置、构建、分发与商店提交。
 
 当前文档只提供学习地图和资源入口，并不包含上述主题的完整操作细节。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：配置状态栏、启动屏幕和应用图标](./9_configuration.md)
+<!-- NAVIGATION END -->

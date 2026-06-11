@@ -134,3 +134,8 @@ useEffect(() => {
 
 - 当前文档未给出 Android/iOS 具体完整的原生代码片段。
 - 当前文档未涉及推送通知等其他模块的实际业务代码。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Brownfield：用 Integrated 方式把 Expo 直接接入原生工程](./39_integrated-approach.md) | [下一页：Expo Monorepo 工作方式 →](./41_monorepos.md)
+<!-- NAVIGATION END -->

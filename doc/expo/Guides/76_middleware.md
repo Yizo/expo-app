@@ -211,3 +211,8 @@ export default function middleware(request) {
 
 - 如果你的应用大量依赖客户端导航，middleware 只能覆盖“首次进入”和“真实请求”，不能覆盖全部导航行为。
 - middleware 更适合作为服务端入口守卫，而不是页面内部业务编排层。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Data Loaders](./75_data-loaders.md) | [下一页：Expo Router Server Headers →](./77_server-headers.md)
+<!-- NAVIGATION END -->

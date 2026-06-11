@@ -143,3 +143,8 @@ module.exports = config;
 - 路径别名是 Metro 能力，不应假设所有 Web 打包器都自动兼容。
 - **文档明确说明：**继承 `expo/tsconfig.base` 是默认基线；配置入口的 TS 支持与普通源码不同。
 - **基于文档内容推导：**迁移可逐文件进行，但启用 `strict` 前应预估现有错误修复量。别名应避免与 Node 包重名，并在团队工具链中统一。当前文档未涉及测试框架类型、环境变量类型、React Native 组件具体类型写法和 CI 类型检查配置。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 中使用 ESLint 与 Prettier](./142_using-eslint.md) | [下一页：使用 Expo 构建 Android TV 与 Apple TV 应用 →](./144_building-for-tv.md)
+<!-- NAVIGATION END -->

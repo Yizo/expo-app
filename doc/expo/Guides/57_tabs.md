@@ -205,3 +205,8 @@ import { Tabs } from 'expo-router';
 - Native tabs 的原生能力细节。
 - 认证、共享路由、深链等更复杂场景。
 - Tabs 与 Stack 混合时的完整设计模式。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 的 Stack 导航](./56_stack.md) | [下一页：Expo Router 的 Native Tabs →](./58_native-tabs.md)
+<!-- NAVIGATION END -->

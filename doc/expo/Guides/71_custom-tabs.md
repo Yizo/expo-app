@@ -139,3 +139,8 @@ export default function Layout() {
 > **基于文档内容推导：** 对共享组、动态路由和深层嵌套路由，优先写完整绝对 `href`，并把 `name` 当作稳定的内部标识，不要把显示文本同时当路由标识使用。
 
 当前文档未涉及：安装命令、无障碍属性的完整配置、Web 与原生的逐平台视觉差异、Hooks API 的完整签名。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Apple Handoff](./70_apple-handoff.md) | [下一页：Expo Router Stack 原生工具栏 →](./72_stack-toolbar.md)
+<!-- NAVIGATION END -->

@@ -229,3 +229,8 @@
 
 - `Protected` 更适合描述“导航层可见性规则”，而不是页面内逻辑判断。
 - 复杂权限体系下，把 screen 的“显示条件”集中到 navigator 层，会比散落在页面组件里更容易维护。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Shared routes](./65_shared-routes.md) | [下一页：Platform-specific extensions and module →](./67_platform-specific-modules.md)
+<!-- NAVIGATION END -->

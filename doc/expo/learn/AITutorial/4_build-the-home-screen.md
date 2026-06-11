@@ -330,3 +330,8 @@ React Native 不直接使用 DOM 元素。本章明确要求通过 `expo-image` 
 - 取消选择时保留当前图片的状态处理。
 
 下一章将继续添加表情贴纸选择模态框，并通过手势操作贴纸。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：创建第一个 Expo 应用](./3_create-your-first-app.md) | [下一页：添加贴纸：实现 Emoji 选择、拖动与缩放 →](./5_add-stickers.md)
+<!-- NAVIGATION END -->

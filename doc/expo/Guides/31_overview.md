@@ -131,3 +131,8 @@
 - 当前文档未涉及具体安装 diff。
 - 当前文档未涉及 `app.json`、`metro.config.js`、`babel.config.js` 的详细配置。
 - 当前文档未涉及 brownfield 原生宿主集成细节。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Why Metro? 学习整理](./30_why-metro.md) | [下一页：在现有 React Native 项目中安装 Expo Modules →](./32_installing-expo-modules.md)
+<!-- NAVIGATION END -->

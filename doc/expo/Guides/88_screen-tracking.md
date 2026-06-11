@@ -102,3 +102,8 @@ export default function Layout() {
 
 - Expo Router 的 URL 一致性让 Web 与原生端的页面追踪模型更容易统一。
 - 把埋点放在布局层，比散落在多个页面组件里更容易维护。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Typed Routes](./87_typed-routes.md) | [下一页：Expo Router 顶层 `src` 目录 →](./89_src-directory.md)
+<!-- NAVIGATION END -->

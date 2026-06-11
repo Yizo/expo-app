@@ -130,3 +130,8 @@ Linking.openURL('https://expo.dev/')
 - 如果你要实现 OAuth、支付或分享跳转，`Linking.createURL()` 是减少环境差异 bug 的关键工具。
 - “能不能打开外部 App”除了代码本身，还受平台安全策略影响。
 - 当前文档未涉及某个具体第三方 App 的业务参数规则，具体 URL 结构应以目标服务文档为准。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Overview of Linking, Deep Links, Android App Links, and iOS Universal Links](./8_overview.md) | [下一页：Linking into your app →](./10_into-your-app.md)
+<!-- NAVIGATION END -->

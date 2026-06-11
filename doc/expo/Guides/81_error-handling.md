@@ -176,3 +176,8 @@ export default function RootLayout() {
 
 - Expo Router 把“未匹配、错误、加载”分别放在不同层级处理，实际开发时不要混成一个机制。
 - 原生与 Web 的错误展示虽然共享路由抽象，但底层语义并不完全相同。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Async Routes](./80_async-routes.md) | [下一页：Expo Router URL 参数 →](./82_url-parameters.md)
+<!-- NAVIGATION END -->

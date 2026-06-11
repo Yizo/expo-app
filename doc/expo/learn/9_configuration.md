@@ -436,3 +436,8 @@ Expo Go 可以用于查看部分开发效果，也能在开发者菜单中显示
 - 使用 `expo-splash-screen` config plugin 配置启动屏幕。
 
 对 React Web 开发者来说，最关键的是区分普通 React UI 和原生应用构建配置。状态栏可以通过组件控制，而应用图标和启动屏幕依赖 Expo 的应用配置及构建流程。尤其是启动屏幕，不能通过 Expo Go 或开发构建验证，必须创建预览构建或生产构建。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 通用应用中处理平台差异](./8_platform-differences.md) | [下一页：Expo 与 React Native 后续学习资源指南 →](./10_follow-up.md)
+<!-- NAVIGATION END -->

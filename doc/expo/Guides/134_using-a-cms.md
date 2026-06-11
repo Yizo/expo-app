@@ -37,3 +37,7 @@ CMS 的角色与 Headless CMS 在 React Web 中类似：应用负责展示，内
 - **基于文档内容推导**：适合远程化的是内容数据，而需要新增原生能力或改变 App 逻辑的需求仍应走应用构建/更新流程。
 - **基于经验建议**：选型时应额外评估 API、权限、离线与缓存能力，但这些并非当前页面明确给出的标准。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 应用中使用 Google 认证](./133_google-authentication.md) | [下一页：在 Expo 应用中使用 Convex →](./135_using-convex.md)
+<!-- NAVIGATION END -->

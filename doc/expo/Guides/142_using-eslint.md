@@ -107,3 +107,8 @@ npx expo install eslint eslint-config-expo --dev
 - Expo 应用横跨 Hermes、浏览器和 Node.js，不能为所有文件盲目开放 Node 全局变量。
 - **文档明确说明：**SDK 版本决定默认配置格式，`npx expo lint` 同时承担初始化与执行检查的角色。
 - **基于文档内容推导：**团队应把生成目录排除，并将 lint 加入日常提交或 CI 检查。当前文档未涉及 CI 配置、自动修复命令、提交钩子和具体规则定制。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo 推送通知服务选型](./141_using-push-notifications-services.md) | [下一页：在 Expo 项目中使用 TypeScript →](./143_typescript.md)
+<!-- NAVIGATION END -->

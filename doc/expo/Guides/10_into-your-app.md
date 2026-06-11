@@ -147,3 +147,8 @@ Linking.parse(url)
 - 自定义 scheme 更适合开发、内部联调和回跳协议，不适合作为唯一的公开链接方案。
 - 如果你需要兼顾“已安装打开 App”和“未安装打开网站”，仅靠本文方案不够。
 - 当前文档未涉及 Android App Links / iOS Universal Links 的双向验证细节。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Linking into other apps](./9_into-other-apps.md) | [下一页：Android App Links →](./11_android-app-links.md)
+<!-- NAVIGATION END -->

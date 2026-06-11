@@ -215,3 +215,8 @@ expect(screen).toHaveRouterState({
 
 - Expo Router 测试的核心不是“组件能不能 render”，而是“路由文件系统能否被可靠模拟”。
 - 官方 matcher 足以覆盖大部分路由行为验证，能减少重复造轮子。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 顶层 `src` 目录](./89_src-directory.md) | [下一页：Expo Router 常见故障排查 →](./91_troubleshooting.md)
+<!-- NAVIGATION END -->

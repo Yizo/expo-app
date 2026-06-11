@@ -752,3 +752,8 @@ cd StickerSmash
 - 理解 React Native 样式对象与 Web CSS 的基本区别。
 
 本章的重点不是构建完整功能，而是确保项目能够成功创建、运行和更新。下一章将在此基础上添加栈导航和标签页导航。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：使用 React Native 与 Expo 构建通用应用：教程导读](./0_introduction.md) | [下一页：在 Expo 应用中添加导航 →](./2_add-navigation.md)
+<!-- NAVIGATION END -->

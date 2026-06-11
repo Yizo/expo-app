@@ -93,3 +93,7 @@ brew install sourcekitten
 - **基于文档内容推导：** 因工具仅支持 macOS，CI 需安排 macOS job 或管理预生成产物。
 - 文档未说明生成文件是否提交 Git、Android 对齐策略和完整端到端示例。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Inline Modules 参考](./108_inline-modules-reference.md) | [下一页：Android 生命周期监听器 →](./110_android-lifecycle-listeners.md)
+<!-- NAVIGATION END -->

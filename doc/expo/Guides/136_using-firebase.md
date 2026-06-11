@@ -107,3 +107,8 @@ npx expo prebuild --clean
 **文档明确说明：**优先追求 Expo Go、快速接入和 Web/原生通用时使用 Firebase JS SDK；需要 Analytics、Crashlytics 等原生能力时使用 React Native Firebase，并切换到开发构建。
 
 **基于文档内容推导：**应在项目早期列出所需 Firebase 服务后再选 SDK，否则从 JS SDK 转向原生 SDK 会引入开发客户端、原生构建和平台配置成本。当前文档未涉及生产环境架构、后端令牌校验、离线策略和测试方案。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 应用中使用 Convex](./135_using-convex.md) | [下一页：在 Expo 中使用 Supabase →](./137_using-supabase.md)
+<!-- NAVIGATION END -->

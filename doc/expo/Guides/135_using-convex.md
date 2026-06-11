@@ -148,3 +148,7 @@ eas integrations:convex:team:delete
 - **基于文档内容推导**：团队应把 integration metadata 的生命周期与实际后端资源生命周期分开管理，避免误以为执行 delete 命令已经完成数据销毁。
 - 当前文档未涉及认证、schema、mutation、文件上传、搜索、调度、错误处理、离线支持、部署密钥保护或生产迁移策略。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 应用中使用 CMS](./134_using-a-cms.md) | [下一页：在 Expo 中使用 Firebase →](./136_using-firebase.md)
+<!-- NAVIGATION END -->

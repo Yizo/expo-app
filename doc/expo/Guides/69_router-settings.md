@@ -191,3 +191,8 @@ router.push('/route', { overrideInitialScreen: false });
 ### 基于文档内容推导
 
 - `initialRouteName` 的核心价值不在“默认打开哪个页面”，而在“让深链接进来的页面拥有合理的导航上下文”。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Customizing links](./68_native-intent.md) | [下一页：Apple Handoff →](./70_apple-handoff.md)
+<!-- NAVIGATION END -->

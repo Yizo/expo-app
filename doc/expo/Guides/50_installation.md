@@ -278,3 +278,8 @@ Web 项目里你常直接从 `main.tsx` 启动；Expo Router 这里必须配合 
 - `app` 目录具体应该怎么组织。
 - 各种特殊路由文件命名规则。
 - 鉴权、布局、栈导航、Tabs 等高级主题。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 简介](./49_introduction.md) | [下一页：Expo Router 文件路由核心概念 →](./51_core-concepts.md)
+<!-- NAVIGATION END -->

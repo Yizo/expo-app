@@ -223,3 +223,8 @@ export const unstable_settings = {
 
 - shared routes 的真正价值是“同一业务页面在多个导航上下文下复用”，而不是单纯减少代码量。
 - 刷新行为意味着 shared routes 更适合原生 App 风格流程，而不是强依赖浏览器刷新还原上下文的 Web 心智模型。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Web modals](./64_web-modals.md) | [下一页：Protected routes →](./66_protected.md)
+<!-- NAVIGATION END -->

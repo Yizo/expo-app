@@ -58,3 +58,7 @@ Android 配置需要提供 SHA-1 certificate fingerprint。文档区分两类证
 - **基于文档内容推导**：Android 验收矩阵至少应包含 EAS/测试签名版本和 Play App Signing 生产版本，并确保对应 SHA-1 都登记在 Google 项目中。
 - **基于文档内容推导**：若 CI/EAS 找不到 Firebase 配置文件，问题发生在原生构建输入阶段，而不是登录按钮运行时。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 应用中使用 Facebook 认证](./132_facebook-authentication.md) | [下一页：在 Expo 应用中使用 CMS →](./134_using-a-cms.md)
+<!-- NAVIGATION END -->

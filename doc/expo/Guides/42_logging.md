@@ -112,3 +112,8 @@ npx react-native log-ios
 
 - 当前文档未涉及如何配置 Hermes。
 - 当前文档未涉及 Android Studio / Xcode 中具体查看日志的操作步骤。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Monorepo 工作方式](./41_monorepos.md) | [下一页：Expo 的开发模式与生产模式 →](./43_development-mode.md)
+<!-- NAVIGATION END -->

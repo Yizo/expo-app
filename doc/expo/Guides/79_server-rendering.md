@@ -268,3 +268,8 @@ npx eas-cli@latest hosting:deploy dist
 
 - SSR 更适合动态内容与动态 metadata 较多的项目。
 - 在 SSR 模式下，部署平台能力与缓存策略会直接影响最终体验。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Static Rendering](./78_static-rendering.md) | [下一页：Expo Router Async Routes →](./80_async-routes.md)
+<!-- NAVIGATION END -->

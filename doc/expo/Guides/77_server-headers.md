@@ -137,3 +137,8 @@
 
 - 这套能力更适合作为应用级默认策略，而不是资源级或边缘缓存级最终方案。
 - 复杂部署场景下，Expo Router header 配置通常要和托管平台的响应头策略一起设计。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Server Middleware](./76_middleware.md) | [下一页：Expo Router Static Rendering →](./78_static-rendering.md)
+<!-- NAVIGATION END -->

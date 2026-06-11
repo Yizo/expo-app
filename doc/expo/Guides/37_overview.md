@@ -127,3 +127,8 @@ React Native 工程单独维护，再打包成：
 
 - 当前文档未涉及任一路线的具体落地代码。
 - 当前文档未涉及 Android/iOS 的详细配置步骤。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo 原生工程升级辅助工具](./36_upgrade.md) | [下一页：Brownfield：用 Isolated 方式把 Expo 打成原生库 →](./38_isolated-approach.md)
+<!-- NAVIGATION END -->

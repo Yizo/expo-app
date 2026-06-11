@@ -146,3 +146,8 @@ Android 示例里需要：
 
 - 当前文档未给出 iOS 宿主工程接入 XCFramework 的完整步骤。
 - 当前文档未涉及 JavaScript 与宿主原生之间复杂消息通信细节。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在现有原生 App 中集成 Expo 工具总览](./37_overview.md) | [下一页：Brownfield：用 Integrated 方式把 Expo 直接接入原生工程 →](./39_integrated-approach.md)
+<!-- NAVIGATION END -->

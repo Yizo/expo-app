@@ -225,3 +225,8 @@ npx expo export --platform web --no-ssg
 > **基于文档内容推导：** 在选择第三方托管前，先用 `expo export` 和 `expo serve` 验证 bundle，再确认目标 adapter、环境变量注入和静态文件目录是否匹配。
 
 当前文档未涉及：数据库连接池的具体方案、认证框架选择、限流实现、各托管平台的生产 SLA。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router iOS 缩放转场](./73_zoom-transition.md) | [下一页：Expo Router Data Loaders →](./75_data-loaders.md)
+<!-- NAVIGATION END -->

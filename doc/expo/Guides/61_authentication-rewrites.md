@@ -242,3 +242,8 @@ app/
 - 这套方案更像“导航层鉴权”，不是“资源层鉴权”。
 - 如果项目认证规则变复杂，redirect 方案会比 `Protected routes` 更容易散落在多个布局文件里。
 - `anchor` 的作用本质上是在 modal 场景下保住导航栈上下文，避免深链接直达 modal 时失去返回基础页面的能力。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 中的认证与受保护路由](./60_authentication.md) | [下一页：Nesting navigators →](./62_nesting-navigators.md)
+<!-- NAVIGATION END -->

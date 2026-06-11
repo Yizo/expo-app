@@ -52,3 +52,8 @@
 **基于文档内容推导**：对多数 React Web 团队，最合理的决策顺序是“现成库 → Expo Modules API → 仅在需要 C++ 时考虑 Turbo Modules”。
 
 **当前文档未涉及**：具体脚手架命令、模块目录结构、Swift/Kotlin API 语法、构建签名、商店发布和调试方法。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 从 SDK 55 迁移到 SDK 56](./95_sdk-55-to-56.md) | [下一页：Expo Modules API 入门 →](./97_get-started.md)
+<!-- NAVIGATION END -->

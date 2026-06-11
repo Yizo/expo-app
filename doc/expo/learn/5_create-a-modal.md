@@ -981,3 +981,8 @@ const [selectedItem, setSelectedItem] = useState<Item>();
 8. 条件渲染 `EmojiSticker`，把 Emoji 显示到图片上。
 
 对于 React Web 开发者，核心 React 思想没有变化：state、props、children、条件渲染和回调仍然是主要机制。真正需要适应的是 React Native 的组件体系、图片来源类型、平台判断方式以及移动端布局和交互 API。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：使用 Expo Image Picker 选择并显示图片](./4_image-picker.md) | [下一页：Expo 手势教程：为贴纸添加双击缩放与拖动能力 →](./6_gestures.md)
+<!-- NAVIGATION END -->

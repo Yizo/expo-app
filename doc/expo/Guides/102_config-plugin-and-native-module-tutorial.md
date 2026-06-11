@@ -127,3 +127,8 @@ npx expo run:ios
 **基于文档内容推导**：适合把安装库所需的确定性原生修改封装进插件，让使用者通过 app config 声明参数，而不是手工编辑生成工程。
 
 **当前文档未涉及**：敏感值管理、插件参数校验、冲突合并、幂等性测试、版本迁移和 EAS Secrets。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：为 Expo 模块生成 TypeScript 接口](./101_type-generation-tutorial.md) | [下一页：在项目中使用独立 Expo Module →](./103_use-standalone-expo-module-in-your-project.md)
+<!-- NAVIGATION END -->

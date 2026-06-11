@@ -76,3 +76,7 @@ SDK 52 起默认替代 React Native community CLI。若只想让 React Native mo
 - **基于文档内容推导：** `exclude` 前确认 JS 不会在该平台调用对应原生 API。
 - 文档未涉及每种包管理器的 hoisting 配置、具体去重命令和 CI 缓存。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：iOS AppDelegate Subscribers](./111_appdelegate-subscribers.md) | [下一页：Expo Modules Shared Objects →](./113_shared-objects.md)
+<!-- NAVIGATION END -->

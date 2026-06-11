@@ -189,3 +189,7 @@ eas build --platform ios --profile development
 - **基于文档内容推导**：选择纯 JS 方式可降低最初的原生构建门槛，但切换到原生社交登录或原生 UI 后必须把 development build 纳入日常测试。
 - 当前文档未完整展示纯 JavaScript 登录表单和“JavaScript + 原生登录”的实现代码，也未展开生产凭据、重定向白名单和商店发布配置。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo 中的认证 SDK 与库](./130_using-authentication.md) | [下一页：在 Expo 应用中使用 Facebook 认证 →](./132_facebook-authentication.md)
+<!-- NAVIGATION END -->

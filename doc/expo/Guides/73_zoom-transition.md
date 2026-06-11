@@ -111,3 +111,8 @@ usePreventZoomTransitionDismissal({
 > **基于文档内容推导：** 动画只应作为体验增强，页面跳转和信息理解不能依赖该效果，因为不支持的平台会自动使用普通导航。
 
 当前文档未涉及：Android 等价转场、动画时长或缓动参数、自定义降级动画、安装额外原生依赖的命令。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Stack 原生工具栏](./72_stack-toolbar.md) | [下一页：Expo Router API Routes →](./74_api-routes.md)
+<!-- NAVIGATION END -->

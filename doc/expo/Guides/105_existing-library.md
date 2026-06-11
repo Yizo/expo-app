@@ -117,3 +117,8 @@ export default requireNativeModule('MyModule');
 **基于文档内容推导**：渐进迁移时可先建立最小空 Module 和 example 链接验证，再逐项把旧能力移入 Expo Module，降低一次性重写风险。
 
 **当前文档未涉及**：旧架构代码共存细节、生命周期 listener 的实际实现、版本兼容测试、发布流程、Web 支持和迁移完成后的清理步骤。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：用 Expo Modules API 包装第三方原生库](./104_third-party-library.md) | [下一页：为 Expo 模块增加 macOS 与 tvOS 支持 →](./106_additional-platform-support.md)
+<!-- NAVIGATION END -->

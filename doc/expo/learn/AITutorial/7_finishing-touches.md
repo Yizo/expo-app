@@ -259,3 +259,8 @@ Fill in the About screen: explain what the app does and credit me as the builder
 - 理解 Expo Go 图标与独立应用图标的区别。
 
 更重要的是，本章明确了 AI 辅助开发的持续工作方式：提出需求、让 Agent 修改、运行验证，再根据实际现象继续修正。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：保存带贴纸的照片：Expo 跨平台实现思路](./6_save-your-creation.md)
+<!-- NAVIGATION END -->

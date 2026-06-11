@@ -145,3 +145,8 @@ npx expo run:ios
 - 对 React Web 开发者来说，Development Build 才更接近“你自己的真实运行时”，Expo Go 更像“共享运行时”。
 - 如果团队把大量原生改动直接写进 `android` / `ios`，就会逐渐偏离 CNG 模式，升级成本会上升。
 - 这篇文档是总览页，因此具体某个能力怎么配置、怎么写插件、怎么调试，当前文档未涉及。
+
+<!-- NAVIGATION START -->
+---
+[下一页：Configure with app config →](./2_configuration.md)
+<!-- NAVIGATION END -->

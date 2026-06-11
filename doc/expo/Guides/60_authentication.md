@@ -274,3 +274,8 @@ Web 用 `localStorage`，native 用 `SecureStore`。
 - 真实 OAuth / JWT / 刷新 token 流程。
 - 后端接口设计。
 - 服务端渲染或边缘中间件层面的认证实现。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 的 Drawer](./59_drawer.md) | [下一页：Authentication in Expo Router using redirects →](./61_authentication-rewrites.md)
+<!-- NAVIGATION END -->

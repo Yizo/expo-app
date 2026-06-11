@@ -147,3 +147,8 @@ router.setParams({ user: 'evan' });
 
 - 选择 local 还是 global 参数读取方式，实质上是在选择“当前路由视角”还是“全局 URL 视角”。
 - 对原生导航场景友好的参数模型，是 Expo Router 与纯浏览器单页面心智的关键区别之一。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 错误处理与加载状态](./81_error-handling.md) | [下一页：Expo Router Color API →](./83_color.md)
+<!-- NAVIGATION END -->

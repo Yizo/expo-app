@@ -139,3 +139,8 @@ function MyScreen() {
 
 - 重定向方案的差异核心不在“能不能跳”，而在“何时跳、是否保留历史、是否随聚焦重复执行”。
 - 对复杂鉴权流来说，本页只是最基础的重定向起点。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Sitemap](./84_sitemap.md) | [下一页：Expo Router Link Preview →](./86_link-preview.md)
+<!-- NAVIGATION END -->

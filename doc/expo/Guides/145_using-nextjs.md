@@ -121,3 +121,8 @@ vercel
 **文档明确说明：**该方案非官方 universal workflow，推荐 SWC，Web 必须由 Next.js CLI 启动，adapter 不支持实验性 `app` 目录。
 
 **基于文档内容推导：**只有在确实需要 Next.js SSR/生态且愿意维护双构建链时才应采用；若目标只是 Expo 的跨平台 Web，默认 Expo Web 工作流通常更简单。当前文档未涉及 App Router、React Server Components、数据获取策略、认证和 monorepo 配置。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：使用 Expo 构建 Android TV 与 Apple TV 应用](./144_building-for-tv.md) | [下一页：升级 Expo SDK →](./146_upgrading-expo-sdk-walkthrough.md)
+<!-- NAVIGATION END -->

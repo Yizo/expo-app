@@ -174,3 +174,8 @@ npx expo start
 
 - typed routes 的价值不只是“更安全的 href”，还包括更完整的编辑器体验和参数契约。
 - 只要项目依赖文件系统路由，类型生成就应被视为 CLI 管理资产，而不是手工资产。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Link Preview](./86_link-preview.md) | [下一页：Expo Router 屏幕埋点追踪 →](./88_screen-tracking.md)
+<!-- NAVIGATION END -->

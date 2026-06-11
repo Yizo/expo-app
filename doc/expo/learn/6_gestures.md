@@ -958,3 +958,8 @@ Animated.Image：缩放贴纸
 ```
 
 本文完成的是基础手势能力。它没有覆盖依赖安装、边界限制、状态保存、复杂手势冲突以及平台差异。原教程下一章将继续介绍如何对图片和贴纸进行截图，并保存到设备图库。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：使用 React Native Modal 创建 Emoji 选择器](./5_create-a-modal.md) | [下一页：在 Expo 应用中截取指定视图并保存到系统相册 →](./7_screenshot.md)
+<!-- NAVIGATION END -->

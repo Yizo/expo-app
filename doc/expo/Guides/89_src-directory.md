@@ -167,3 +167,8 @@ npx expo export
 
 - `src/app` 是“官方支持的整理方式”，而不是“任意重命名根目录”的许可。
 - 越接近官方默认结构，越能减少 Expo CLI、静态渲染与周边工具的兼容性风险。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 屏幕埋点追踪](./88_screen-tracking.md) | [下一页：Expo Router 测试配置 →](./90_testing.md)
+<!-- NAVIGATION END -->

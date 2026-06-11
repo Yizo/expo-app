@@ -263,3 +263,8 @@ Liquid Glass 就是典型例子。
 - Drawer、Tabs、认证保护等完整模式。
 - 每个 screen option 的完整业务示例。
 - Android / iOS 各种动画选择的设计建议对比。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 常见导航模式](./55_common-navigation-patterns.md) | [下一页：Expo Router 的 JavaScript Tabs →](./57_tabs.md)
+<!-- NAVIGATION END -->

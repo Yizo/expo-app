@@ -127,3 +127,8 @@ npx expo prebuild --clean
 - CNG 的核心收益不是“省去原生知识”，而是把原生复杂度集中到更少、更可审计的入口。
 - 对有长期维护压力的团队来说，CNG 更像一种工程治理策略，而不只是一个命令。
 - 当前文档未涉及如何编写具体 config plugin，只解释了它在 CNG 里的地位。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Configure with app config](./2_configuration.md) | [下一页：Using Expo SDK, React Native, and third-party libraries →](./4_using-libraries.md)
+<!-- NAVIGATION END -->

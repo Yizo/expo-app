@@ -223,3 +223,8 @@ npx expo start --web
 - Metro 全量配置项逐项说明
 - 自定义 transformer 的复杂示例
 - Monorepo 的完整 Metro 实战配置
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Using local HTTPS development 学习整理](./25_local-https-development.md) | [下一页：Analyzing JavaScript bundles with Expo Atlas and Lighthouse 学习整理 →](./27_analyzing-bundles.md)
+<!-- NAVIGATION END -->

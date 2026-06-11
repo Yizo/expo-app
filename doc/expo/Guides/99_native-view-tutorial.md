@@ -115,3 +115,8 @@ Android 使用 `EventDispatcher` 委托；iOS 创建 `EventDispatcher` 实例。
 **基于文档内容推导**：设计原生视图时，应把布局、平台代理回调和原生对象管理留在视图类中，让 Module 只描述公开契约。
 
 **当前文档未涉及**：Web `iframe` 实现、完整浏览器能力、无障碍、测试、错误事件和安全加固。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：创建持久化设置的 Expo 原生模块](./98_native-module-tutorial.md) | [下一页：在 Expo 应用内创建 Inline Module →](./100_inline-modules-tutorial.md)
+<!-- NAVIGATION END -->

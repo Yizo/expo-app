@@ -175,7 +175,7 @@
         <button id="expo-btn-pause">暂停</button>
         <button id="expo-btn-step">只收集当前页并跳下一页</button>
         <button id="expo-btn-stop">停止并输出结果</button>
-        <button id="expo-btn-reset">清空并回到起始页</button>
+        <button id="expo-btn-reset">清空</button>
         <button id="expo-btn-copy">复制结果</button>
       </div>
 
@@ -239,14 +239,8 @@
 		};
 
 		panel.querySelector("#expo-btn-reset").onclick = () => {
-			const startUrl = getStartUrl();
 			resetState();
-
-			if (startUrl) {
-				location.href = startUrl;
-			} else {
-				renderPanel("请先手动启动，以记录当前页面为起始页");
-			}
+			renderPanel("已清空状态");
 		};
 
 		panel.querySelector("#expo-btn-copy").onclick = async () => {

@@ -180,3 +180,8 @@ nodeLinker: hoisted
 
 - 当前文档未涉及 Nx、Turborepo 等更高层 monorepo 工具的配置。
 - 当前文档未涉及 EAS 在 monorepo 中的完整 CI 配置。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Brownfield 中的生命周期监听机制](./40_lifecycle-listeners.md) | [下一页：Expo 项目里的日志查看方式 →](./42_logging.md)
+<!-- NAVIGATION END -->

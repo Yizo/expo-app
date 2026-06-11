@@ -179,3 +179,8 @@ import { Drawer } from 'expo-router/drawer';
 - Drawer 的完整 options 列表。
 - 自定义抽屉内容。
 - 深链、鉴权、嵌套路由与 Drawer 的组合模式。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 的 Native Tabs](./58_native-tabs.md) | [下一页：Expo Router 中的认证与受保护路由 →](./60_authentication.md)
+<!-- NAVIGATION END -->

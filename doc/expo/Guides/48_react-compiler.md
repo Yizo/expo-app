@@ -236,3 +236,8 @@ web: {
 - React Compiler 的底层实现原理。
 - 编译前后性能如何量化评估。
 - 具体安装命令与完整 Babel 配置参数手册。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：React Native 的 New Architecture](./47_new-architecture.md) | [下一页：Expo Router 简介 →](./49_introduction.md)
+<!-- NAVIGATION END -->

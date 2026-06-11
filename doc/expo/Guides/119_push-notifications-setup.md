@@ -155,3 +155,7 @@ eas build
 
 本页未完整说明生产后端架构、token 数据库存储、批量发送、回执检查、限流、直接使用 FCM/APNs 的实现，以及 iOS 凭据生成细节。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：开始使用 Expo 通知前需要了解的概念](./118_what-you-need-to-know.md) | [下一页：使用 Expo Push Service 发送通知 →](./120_sending-notifications.md)
+<!-- NAVIGATION END -->

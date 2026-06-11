@@ -139,3 +139,8 @@ module.exports = {
 
 - 当前文档未逐项展开 Metro、Babel、iOS/Android 的具体配置内容。
 - 当前文档未涉及如何处理已有自定义脚本与 Expo CLI 的兼容问题。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在现有 React Native 项目中安装 Expo Modules](./32_installing-expo-modules.md) | [下一页：在现有 React Native 项目中安装 expo-updates →](./34_installing-updates.md)
+<!-- NAVIGATION END -->

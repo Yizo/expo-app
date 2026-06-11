@@ -208,3 +208,8 @@ npx expo export
 - 各项优化具体节省了多少体积
 - Babel preset 的完整配置示例
 - 与其他 bundler 的 tree shaking 行为逐项对比
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Analyzing JavaScript bundles with Expo Atlas and Lighthouse 学习整理](./27_analyzing-bundles.md) | [下一页：Minifying JavaScript 学习整理 →](./29_minify.md)
+<!-- NAVIGATION END -->

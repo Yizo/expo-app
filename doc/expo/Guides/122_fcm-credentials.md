@@ -87,3 +87,7 @@ Upload a new service account key
 
 本页未说明 Firebase 项目中 Android package name 的创建流程、iOS APNs 凭据、token 获取、发送 API、密钥轮换策略或 FCM 故障排查细节。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 应用中处理收到的通知](./121_receiving-notifications.md) | [下一页：直接通过 FCM 和 APNs 发送通知 →](./123_sending-notifications-custom.md)
+<!-- NAVIGATION END -->

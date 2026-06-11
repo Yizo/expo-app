@@ -183,3 +183,8 @@ export const loader = createServerLoader(async (request, params) => {
 > **基于文档内容推导：** 由于客户端缓存暂时无法主动失效，不应把 Loader 当成频繁写入后立即刷新的一般数据层；更适合首屏或导航级读取。
 
 当前文档未涉及：表单提交/Mutation API、缓存失效方案、流式 Loader、重新验证时间配置、原生端离线缓存策略。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router API Routes](./74_api-routes.md) | [下一页：Expo Router Server Middleware →](./76_middleware.md)
+<!-- NAVIGATION END -->

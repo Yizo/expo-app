@@ -64,3 +64,7 @@ npx expo prebuild
 - **基于文档内容推导：** 监听足够高但仍具体的目录，避免重复嵌套项。
 - **基于文档内容推导：** 使用项目级清晰模块名，降低全局重名风险。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Modules API 参考](./107_module-api.md) | [下一页：Expo Swift 模块 TypeScript 类型生成参考 →](./109_type-generation-reference.md)
+<!-- NAVIGATION END -->

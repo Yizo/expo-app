@@ -623,3 +623,8 @@ if (Platform.OS !== 'web') {
 Android 和 iOS 使用 `react-native-view-shot` 截取视图，并通过媒体库 API 保存；Web 使用 `dom-to-image` 将 DOM 节点转换为 JPEG，再通过浏览器链接触发下载。
 
 对于 React Web 开发者，最重要的认识是：Expo 可以共享 React 组件和业务逻辑，但 Android、iOS 与 Web 并不是相同的运行环境。遇到能力差异时，应保持功能和调用入口一致，同时为各平台选择合适的底层实现。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 应用中截取指定视图并保存到系统相册](./7_screenshot.md) | [下一页：配置状态栏、启动屏幕和应用图标 →](./9_configuration.md)
+<!-- NAVIGATION END -->

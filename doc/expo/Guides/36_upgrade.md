@@ -120,3 +120,8 @@
 - 当前文档未涉及完整的 SDK 升级步骤。
 - 当前文档未涉及如何解决升级冲突。
 - 当前文档未涉及自动化升级脚本。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在现有 React Native 项目中安装 expo-dev-client](./35_install-dev-builds-in-bare.md) | [下一页：在现有原生 App 中集成 Expo 工具总览 →](./37_overview.md)
+<!-- NAVIGATION END -->

@@ -226,3 +226,8 @@ Xcode 会自动生成 Provisioning Profile 和 Signing Certificate。
 - 应用截图、商店文案、审核材料准备
 - iOS 证书问题排查
 - Android 多渠道包或 flavor 的发布策略
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Create a debug build locally 学习整理](./16_local-app-development.md) | [下一页：Use build cache providers 学习整理 →](./18_cache-builds-remotely.md)
+<!-- NAVIGATION END -->

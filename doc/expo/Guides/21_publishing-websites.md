@@ -227,3 +227,8 @@ npx expo serve
 - CI/CD 自动化脚本的完整写法
 - 各托管平台的价格、配额和权限策略
 - 自定义 Node.js 服务器的具体实现
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Develop websites with Expo 学习整理](./20_web.md) | [下一页：Using React DOM in Expo native apps 学习整理 →](./22_dom-components.md)
+<!-- NAVIGATION END -->

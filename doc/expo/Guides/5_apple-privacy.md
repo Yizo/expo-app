@@ -124,3 +124,8 @@ npx expo install --fix
 - 这个问题本质上属于“原生依赖合规性管理”，不是单纯代码功能实现问题。
 - 如果你只关注 JavaScript 层，很容易漏掉这类审核前置要求。
 - 当前文档未涉及所有 `NSPrivacyAccessedAPITypeReasons` 的完整枚举，只说明了获取来源和配置方式。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Using Expo SDK, React Native, and third-party libraries](./4_using-libraries.md) | [下一页：Permissions →](./6_permissions.md)
+<!-- NAVIGATION END -->

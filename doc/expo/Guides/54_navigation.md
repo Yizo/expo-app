@@ -253,3 +253,8 @@ export const unstable_settings = {
 - 鉴权保护路由的完整实现。
 - 各类 navigator 的完整配置项。
 - SEO 或 Web 静态渲染细节。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 的导航布局](./53_navigation-layouts.md) | [下一页：Expo Router 常见导航模式 →](./55_common-navigation-patterns.md)
+<!-- NAVIGATION END -->

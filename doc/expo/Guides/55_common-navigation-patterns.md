@@ -215,3 +215,8 @@ Expo Router 允许通过 route groups 让两个导航分区复用同一路由。
 - 完整认证上下文实现。
 - 各 navigator 的全部配置选项。
 - SEO、静态渲染或服务端能力。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 中的页面导航](./54_navigation.md) | [下一页：Expo Router 的 Stack 导航 →](./56_stack.md)
+<!-- NAVIGATION END -->

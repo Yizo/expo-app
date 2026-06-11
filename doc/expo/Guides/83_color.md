@@ -151,3 +151,8 @@ const backgroundColor = Platform.select({
 
 - `Color` API 更适合作为“原生平台视觉对齐工具”，而不是单独承担完整跨平台设计系统。
 - 想写好跨平台颜色方案，往往需要把 Expo Router `Color` 与自己的 Web 颜色体系并用。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router URL 参数](./82_url-parameters.md) | [下一页：Expo Router Sitemap →](./84_sitemap.md)
+<!-- NAVIGATION END -->

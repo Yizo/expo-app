@@ -206,3 +206,8 @@ open -a Simulator
 - Android 模拟器的安装和使用。
 - 真实 iPhone 的连接与调试流程细节。
 - EAS Build、发布、签名等打包流程。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：用 Android Studio 模拟器测试 Expo / React Native 应用](./45_android-studio-emulator.md) | [下一页：React Native 的 New Architecture →](./47_new-architecture.md)
+<!-- NAVIGATION END -->

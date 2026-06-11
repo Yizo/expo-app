@@ -211,3 +211,8 @@ Android、iOS、Web 共享统一导航结构，但仍可在路由层面下沉到
 - 手动安装 Expo Router 的详细步骤。
 - 各种特殊文件命名规则。
 - 鉴权、布局、嵌套路由等更深入主题。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：React Compiler](./48_react-compiler.md) | [下一页：Expo Router 手动安装 →](./50_installation.md)
+<!-- NAVIGATION END -->

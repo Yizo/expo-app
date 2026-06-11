@@ -159,3 +159,8 @@ adb server version (xx) doesn't match this client (xx); killing...
 
 - 当前文档未涉及 Windows 或 Linux 的 Android 模拟器配置。
 - 当前文档未涉及如何把 Expo 项目真正运行到模拟器上的业务命令流程。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo 常见开发错误排查](./44_common-development-errors.md) | [下一页：iOS Simulator →](./46_ios-simulator.md)
+<!-- NAVIGATION END -->

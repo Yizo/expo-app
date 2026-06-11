@@ -139,3 +139,8 @@ npx expo start
 - 同一个功能在 Expo Go 测试通过，不意味着上架构建一定通过审核。
 - 如果团队把权限问题留到发布前才检查，返工成本会很高，因为它往往需要重新出包。
 - 当前文档未涉及每个权限 API 的具体运行时调用方式，重点在声明与配置。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Privacy manifests](./5_apple-privacy.md) | [下一页：Environment variables in Expo →](./7_environment-variables.md)
+<!-- NAVIGATION END -->

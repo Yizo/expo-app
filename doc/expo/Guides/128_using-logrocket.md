@@ -77,3 +77,7 @@ const App = () => {
 - **基于文档内容推导**：排查某次 OTA 更新的问题时，应同时按 `updateId` 和 `expoChannel` 过滤，避免把内置版本或其他通道的会话混入分析。
 - **基于经验建议**：启用会话录制前应核对敏感输入和隐私政策；当前文档未给出相关配置细节。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 应用中使用 BugSnag](./127_using-bugsnag.md) | [下一页：在 Expo 应用中使用 Vexo →](./129_using-vexo.md)
+<!-- NAVIGATION END -->

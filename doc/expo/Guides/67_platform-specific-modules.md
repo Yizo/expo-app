@@ -214,3 +214,8 @@ return <Tabs />;
 
 - 路由目录更适合承载“稳定路由定义”，而不是大量平台差异实现。
 - 如果平台差异越来越大，把差异收敛到组件层，比让路由层充满平台分支更容易维护。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Protected routes](./66_protected.md) | [下一页：Customizing links →](./68_native-intent.md)
+<!-- NAVIGATION END -->

@@ -77,3 +77,8 @@ export const supabase = createClient(supabaseUrl, supabasePublishableKey, {
 **文档明确说明：**使用 `supabase-js` 是集中使用 Supabase 全套能力的便捷方式；客户端初始化应使用项目 URL 和 Publishable key，并配置持久化会话。
 
 **基于文档内容推导：**在编写页面查询前，应先完成 RLS 策略设计并验证匿名用户和登录用户的权限。应把 Supabase 客户端集中在单一模块中，避免各页面重复初始化。涉及 Apple/Google 登录、Magic Link 或 OAuth 时，需要把 Deep Linking 作为独立的移动端集成任务处理。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 中使用 Firebase](./136_using-firebase.md) | [下一页：在 Expo 中通过 Resend 发送邮件 →](./138_using-resend.md)
+<!-- NAVIGATION END -->

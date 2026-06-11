@@ -172,3 +172,8 @@ npx expo run:android --variant freeDebug --app-id dev.expo.myapp.free
 - 应用商店提交的完整流程
 - 原生代码如何手写修改
 - `config plugin` 的具体写法
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Build locally: Overview](./15_local-app-overview.md) | [下一页：Create a release build locally 学习整理 →](./17_local-app-production.md)
+<!-- NAVIGATION END -->

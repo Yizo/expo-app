@@ -285,3 +285,8 @@ export const unstable_settings = {
 - Expo Router modal route 的核心价值不只是“弹出来”，而是“仍然属于导航系统”。
 - `anchor` 本质上是在 modal 深链接场景下，为返回路径预先保留一个导航基准页。
 - 如果你的业务强依赖 URL、历史记录和恢复上下文，route-based modal 会比纯组件 modal 更合适。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Nesting navigators](./62_nesting-navigators.md) | [下一页：Web modals →](./64_web-modals.md)
+<!-- NAVIGATION END -->

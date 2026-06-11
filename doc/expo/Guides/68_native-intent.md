@@ -254,3 +254,8 @@ redirectSystemPath({ path, initial })
 
 - 链接改写应该分为“系统入口清洗”和“应用内部策略重定向”两层，而不是只靠一个入口。
 - Web 与原生在初始路由解析时机不同，所以链接处理策略天然会分叉。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Platform-specific extensions and module](./67_platform-specific-modules.md) | [下一页：Router settings →](./69_router-settings.md)
+<!-- NAVIGATION END -->

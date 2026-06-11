@@ -230,3 +230,8 @@ import { Slot } from 'expo-router';
 - 每种导航器的完整 API 参数表。
 - 鉴权、共享路由、深链等高级导航模式。
 - 各种复杂动画或 header 的细节配置。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 路由命名规则](./52_notation.md) | [下一页：Expo Router 中的页面导航 →](./54_navigation.md)
+<!-- NAVIGATION END -->

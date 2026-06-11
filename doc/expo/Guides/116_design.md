@@ -85,3 +85,7 @@ Expo Modules API 因此以“与渲染器无关”为设计目标：模块无需
 
 本页未提供创建模块的命令、目录结构、具体 API 声明语法、测试方式、发布流程或 Shared Objects 的完整用法。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo Modules 中 Mock 原生调用](./115_mocking.md) | [下一页：Expo 推送通知服务概览 →](./117_overview.md)
+<!-- NAVIGATION END -->

@@ -77,3 +77,7 @@ npx expo-modules-test-core generate-js-mocks
 
 文档未涉及 Swift/Kotlin 原生单元测试、设备集成测试、Jest 配置全过程、覆盖率阈值、定时器/事件 emitter mock 和 CI。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：`expo-module.config.json` 配置参考](./114_module-config.md) | [下一页：Expo Modules API 的设计考量 →](./116_design.md)
+<!-- NAVIGATION END -->

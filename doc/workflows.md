@@ -6,6 +6,20 @@
 
 ---
 
+## 约束条件
+
+> 请严格按照 `doc/workflows.md` 执行，不要扩展或推断未定义的行为。
+
+1. 本地文件读取和写入范围只能限于 `doc/workflows.md` 中明确列举或配置的文件、模板、文档列表和输出目录。
+2. 禁止扫描、读取、修改工作流文档未明确声明的其他本地目录或文件。
+3. 初始阶段只能访问工作流文档或文档列表中明确给出的互联网文档地址。
+4. 如果已访问的互联网文档中包含其他链接，只有在工作流文档明确允许继续访问时，才可以访问。
+5. 每个生成文件只能基于当前 URL 对应的文档内容生成，不能混入其他文档内容。
+6. 最终只允许在工作流文档配置的输出目录中生成 Markdown 文件，不得创建其他额外文件。
+7. Expo版本以互联网文档地址中的版本为主, 不要看本地版本
+8. 调用 `../tools/generate-expo-tutorial-docs.js` 脚本来生成, 不要生成额外的脚步工具
+9. 每篇生成的 Markdown 必须包含「上一页 / 下一页」导航，顺序以 `DOC_LIST_FILE` 为准
+
 ## 配置
 
 所有可变配置只在这里写一次，后续流程只能引用变量。
@@ -13,8 +27,8 @@
 ```text
 DOC_LIST_FILE = ./docs-list.txt
 PROMPT_TEMPLATE = ./Prompt.md
-OUTPUT_DIR = ./expo/Guides/
-MAX_CONCURRENCY = 10
+OUTPUT_DIR = ./expo/Reference
+MAX_CONCURRENCY = 20
 ```
 
 说明：
@@ -111,12 +125,14 @@ actualConcurrency = min(MAX_CONCURRENCY, taskCount)
 1. 以文档中顺序为编号, 从1开始递增
 2. 以URL最后一个pathname为文件名, 去掉.md后缀
 3. 最后拼接为`{{序号}}__{{文件名}}.md`
+4. 假如当前目录中存在同名的则覆盖, 非同名的先读取文件名以编号来递增
 
 示例：
 
-````text
+```text
 https://docs.expo.dev/workflow/overview.md
 → 1_overview.md
+```
 
 ---
 
@@ -126,7 +142,7 @@ https://docs.expo.dev/workflow/overview.md
 
 ```text
 visitedUrls = []
-````
+```
 
 规则：
 
@@ -135,6 +151,8 @@ visitedUrls = []
 3. 不生成空文件。
 4. 不用错误信息代替学习文档内容。
 5. 只有 `DOC_LIST_FILE` 读取失败、`OUTPUT_DIR` 无法创建等全局错误，才终止整个流程。
+
+请阅读并严格执行 `doc/workflows.md`，根据其中的配置和流程生成本地 Markdown 文件。
 
 ## 最终要求
 

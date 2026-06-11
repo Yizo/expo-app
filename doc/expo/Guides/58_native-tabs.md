@@ -341,3 +341,8 @@ disableAutomaticContentInsets
 - NativeTabs 完整 API 参数表。
 - 认证保护与业务权限控制的完整实现。
 - 与 EAS Build、原生工程配置的更深入关系。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 的 JavaScript Tabs](./57_tabs.md) | [下一页：Expo Router 的 Drawer →](./59_drawer.md)
+<!-- NAVIGATION END -->

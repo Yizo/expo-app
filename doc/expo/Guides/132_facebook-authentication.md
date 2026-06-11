@@ -51,3 +51,7 @@
 - 当前文档仅补充 Android，没有提供 iOS 配置、登录按钮代码、Token 交换、服务端验证、权限范围、隐私或审核细节。
 - **基于文档内容推导**：应先稳定 `android.package` 和商店签名，再完成 Facebook Android 平台配置，否则后续更换标识或证书会导致登录配置不匹配。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 应用中使用 Clerk](./131_using-clerk.md) | [下一页：在 Expo 应用中使用 Google 认证 →](./133_google-authentication.md)
+<!-- NAVIGATION END -->

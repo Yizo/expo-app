@@ -127,3 +127,8 @@ npx expo install <package-name>
 - 对 Expo 项目来说，选库标准不只是 API 是否好用，还包括“是否容易与原生构建链集成”。
 - 如果一个库在 React Native Directory 中信息清晰、支持标签明确，接入风险通常更低。
 - 当前文档未涉及某个具体库的逐项兼容性清单，它提供的是判断方法，不是完整库目录。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Continuous Native Generation (CNG)](./3_continuous-native-generation.md) | [下一页：Privacy manifests →](./5_apple-privacy.md)
+<!-- NAVIGATION END -->

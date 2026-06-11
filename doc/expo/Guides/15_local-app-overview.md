@@ -107,3 +107,8 @@ npx expo run:ios
 - 团队如果完全不会本地构建，遇到原生问题时排查成本会很高。
 - 本地构建知识应尽早补齐，哪怕日常主要使用云构建。
 - 当前文档未涉及具体 Android / iOS 环境安装步骤，也未展开发布构建签名细节，只提供导航入口。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Adopt Prebuild](./14_adopting-prebuild.md) | [下一页：Create a debug build locally 学习整理 →](./16_local-app-development.md)
+<!-- NAVIGATION END -->

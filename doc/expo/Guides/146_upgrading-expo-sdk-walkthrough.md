@@ -92,3 +92,8 @@ npx expo-doctor
 **文档明确说明：**逐版本升级；对齐依赖并运行 doctor；按 CNG 使用情况处理原生目录；每次都阅读目标 SDK 发布说明。
 
 **基于文档内容推导：**升级应被视为包含 JavaScript 依赖、原生工程和运行环境的迁移，而不是单次 `package.json` 改版。对落后多个 SDK 的项目，重复执行每个版本的完整流程比直接跳到最新版本更容易隔离故障。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：将 Next.js 与 Expo Web 集成](./145_using-nextjs.md)
+<!-- NAVIGATION END -->

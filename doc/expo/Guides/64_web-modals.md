@@ -286,3 +286,8 @@ export const unstable_settings = {
 - Expo Router 正在尝试把“路由式 modal”做成一套跨平台但又尊重 Web 交互习惯的模型。
 - 对桌面 Web 来说，`webModalStyle` 是比纯 RN style 更接近传统 Web UI 定制方式的入口。
 - 如果你要做强交互、自定义外观的 Web modal，`transparentModal` 往往比标准 `modal` 更有扩展性。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Modals](./63_modals.md) | [下一页：Shared routes →](./65_shared-routes.md)
+<!-- NAVIGATION END -->

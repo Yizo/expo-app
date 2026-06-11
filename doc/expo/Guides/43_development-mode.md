@@ -112,3 +112,8 @@ npx expo start --no-dev --minify
 
 - 当前文档未涉及完整打正式安装包的步骤。
 - 当前文档未涉及性能分析工具的具体使用方式。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo 项目里的日志查看方式](./42_logging.md) | [下一页：Expo 常见开发错误排查 →](./44_common-development-errors.md)
+<!-- NAVIGATION END -->

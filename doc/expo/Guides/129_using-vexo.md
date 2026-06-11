@@ -59,3 +59,7 @@ vexo('YOUR_API_KEY');
 - **基于文档内容推导**：生产应用应使用 development/production build 验证，而不能以 Expo Go 作为此集成的验收环境。
 - **基于经验建议**：先用默认自动采集建立基线，再只为关键业务动作增加自定义事件，避免事件体系重复；这不是当前文档的明确要求。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 应用中使用 LogRocket](./128_using-logrocket.md) | [下一页：Expo 中的认证 SDK 与库 →](./130_using-authentication.md)
+<!-- NAVIGATION END -->

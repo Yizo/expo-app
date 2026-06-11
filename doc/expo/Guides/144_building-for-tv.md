@@ -149,3 +149,8 @@ Expo DevClient 仅在 SDK 54 及以上支持 TV：Android TV 的操作与 Androi
 **文档明确说明：**TV 项目需要匹配 SDK 的 `react-native-tvos`、TV config plugin、`EXPO_TV` 和 clean prebuild；库支持范围不是完整 Expo SDK。
 
 **基于文档内容推导：**在迁移现有项目之前，应先审计所有依赖的 TV 兼容性，并把手机/TV 构建 profile 分开。本文未涉及遥控器焦点交互、十英尺 UI、电视商店提交、性能调优和自动化测试。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 项目中使用 TypeScript](./143_typescript.md) | [下一页：将 Next.js 与 Expo Web 集成 →](./145_using-nextjs.md)
+<!-- NAVIGATION END -->

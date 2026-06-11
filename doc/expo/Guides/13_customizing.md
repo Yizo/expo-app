@@ -113,3 +113,8 @@ npx expo run
 - 文档推荐的本质是“把原生复杂度模块化”，而不是鼓励直接维护整份原生工程。
 - Expo 项目并没有阻止你写原生代码，只是鼓励你用更可维护的方式写。
 - 当前文档未涉及 Expo Modules API 的具体代码写法，只给出入口和工作流建议。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：iOS Universal Links](./12_ios-universal-links.md) | [下一页：Adopt Prebuild →](./14_adopting-prebuild.md)
+<!-- NAVIGATION END -->

@@ -112,3 +112,8 @@ Android 事件负载使用 `Bundle`/`bundleOf`，iOS 使用字典。JS 层获得
 **基于经验建议**：生产模块还应考虑写入失败、线程、迁移、测试和多个调用方竞争，但这些不属于当前教程内容。
 
 **当前文档未涉及**：Web 实现、异步 API、错误恢复、数据迁移、安全存储和自动化测试。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Modules API 入门](./97_get-started.md) | [下一页：创建 Expo 原生视图：封装系统 WebView →](./99_native-view-tutorial.md)
+<!-- NAVIGATION END -->

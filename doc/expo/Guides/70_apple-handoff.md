@@ -268,3 +268,8 @@ npx expo run:ios -d
 
 - Handoff 的难点不在页面代码本身，而在 Web 域名、原生签名、系统能力声明和设备设置的一致性。
 - 这是一个强依赖外部环境的能力，联调成本会明显高于普通路由功能。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Router settings](./69_router-settings.md) | [下一页：Expo Router 自定义标签页布局 →](./71_custom-tabs.md)
+<!-- NAVIGATION END -->

@@ -132,3 +132,7 @@ if (typeof updateGroup === 'string') {
 
 当前文档未涉及采样率、隐私脱敏、性能监控、告警规则和 Sentry 初始化参数的完整配置。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo 与 React Native 中的 Analytics SDK 选择概览](./125_using-analytics.md) | [下一页：在 Expo 应用中使用 BugSnag →](./127_using-bugsnag.md)
+<!-- NAVIGATION END -->

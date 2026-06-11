@@ -237,3 +237,8 @@ export const CustomNavigator = withLayoutContext(
 > **基于文档内容推导：** 在移动文件前先完成 TypeScript 与路径别名改造，可以把“导入路径错误”和“导航行为错误”分开处理。
 
 当前文档未涉及：完整依赖安装命令、每种 Navigator 的所有 options 对照表、自动迁移脚本、第三方导航插件兼容清单。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 与 Metro 保留路径](./92_reserved-paths.md) | [下一页：从 Expo Webpack 迁移到 Expo Router →](./94_from-expo-webpack.md)
+<!-- NAVIGATION END -->

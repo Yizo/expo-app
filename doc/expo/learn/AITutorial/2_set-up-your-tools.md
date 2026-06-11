@@ -415,3 +415,8 @@ React Native 组件最终面向移动端原生界面，而不是 HTML DOM。Expo
 - Expo Go 让开发者在实体手机上查看和验证应用。
 
 完成最后的 MCP 查询测试后，工具环境即配置完成。下一阶段才会正式创建 Expo 应用并在手机上运行。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：使用 AI Agent 构建 Expo 应用：教程导读](./1_introduction.md) | [下一页：创建第一个 Expo 应用 →](./3_create-your-first-app.md)
+<!-- NAVIGATION END -->

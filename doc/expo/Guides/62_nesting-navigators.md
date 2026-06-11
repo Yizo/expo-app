@@ -187,3 +187,8 @@ src/app/home/messages.tsx -> 内层页面
 
 - Expo Router 的嵌套导航天然更适合用 URL 来表达最终目标，而不是像传统导航库那样表达“如何一步步抵达”。
 - 如果一个模块内部的导航方式与全局不同，例如全局是 stack、模块内部是 tabs，那么给该模块单独建目录和 `_layout.tsx` 会是更自然的建模方式。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Authentication in Expo Router using redirects](./61_authentication-rewrites.md) | [下一页：Modals →](./63_modals.md)
+<!-- NAVIGATION END -->

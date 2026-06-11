@@ -58,3 +58,7 @@ subscriber 可实现 `applicationDidBecomeActive`、`applicationWillResignActive
 
 文档未涉及把这些事件继续发送到 JavaScript、通知权限、后台模式配置、SceneDelegate 和测试。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：Android 生命周期监听器](./110_android-lifecycle-listeners.md) | [下一页：Expo Autolinking →](./112_autolinking.md)
+<!-- NAVIGATION END -->

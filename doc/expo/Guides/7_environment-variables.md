@@ -123,3 +123,8 @@ Expo CLI 会自动加载 `.env` 文件并内联变量。
 - 这套机制更适合“公开配置注入”，不适合“秘密配置管理”。
 - 团队如果允许多种写法混用，很容易出现“变量明明存在但没被内联”的隐蔽问题。
 - 当前文档未涉及非公开服务端密钥在 Expo 项目中的完整最佳实践，只明确说明了哪些做法不安全。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Permissions](./6_permissions.md) | [下一页：Overview of Linking, Deep Links, Android App Links, and iOS Universal Links →](./8_overview.md)
+<!-- NAVIGATION END -->

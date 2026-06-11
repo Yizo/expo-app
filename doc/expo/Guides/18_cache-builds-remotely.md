@@ -159,3 +159,8 @@ npm run build provider
 - EAS provider 的内部实现细节
 - 远程缓存的权限管理、安全策略和清理策略
 - 自定义 provider 的完整发布流程
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Create a release build locally 学习整理](./17_local-app-production.md) | [下一页：Precompiled Expo Modules 学习整理 →](./19_prebuilt-expo-modules.md)
+<!-- NAVIGATION END -->

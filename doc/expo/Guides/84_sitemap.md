@@ -116,3 +116,8 @@ npx uri-scheme open exp://<your-ip>:19000/--/form-sheet --ios
 
 - 本页的 sitemap 更接近“路由调试工具”，不是 SEO 站点地图方案。
 - 深链接调试通常应同时覆盖 Web 浏览器验证与原生设备 URI scheme 验证。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router Color API](./83_color.md) | [下一页：Expo Router Redirects →](./85_redirects.md)
+<!-- NAVIGATION END -->

@@ -114,3 +114,8 @@ npx uri-scheme add your-scheme
 
 - 当前文档未涉及如何创建和分发 development build 的完整日常流程。
 - 当前文档未涉及 iOS/Android 的更细粒度原生配置差异。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在现有 React Native 项目中安装 expo-updates](./34_installing-updates.md) | [下一页：Expo 原生工程升级辅助工具 →](./36_upgrade.md)
+<!-- NAVIGATION END -->

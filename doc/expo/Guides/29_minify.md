@@ -172,3 +172,8 @@ npm install --save-dev metro-minify-uglify
 - Hermes 与 Web 平台 minifier 差异的更完整说明
 - esbuild 的完整配置样例
 - 各 minifier 的压缩率与速度基准测试
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Tree shaking and code removal 学习整理](./28_tree-shaking.md) | [下一页：Why Metro? 学习整理 →](./30_why-metro.md)
+<!-- NAVIGATION END -->

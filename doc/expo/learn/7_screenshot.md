@@ -699,3 +699,8 @@ MediaLibrary.saveToLibraryAsync()
 3. 生成截图文件和保存到系统相册是两个独立步骤。
 
 本章完成的是 Android 和 iOS 上的截图保存功能；如何在 Web 上实现相同功能，当前文档未涉及。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo 手势教程：为贴纸添加双击缩放与拖动能力](./6_gestures.md) | [下一页：在 Expo 通用应用中处理平台差异 →](./8_platform-differences.md)
+<!-- NAVIGATION END -->

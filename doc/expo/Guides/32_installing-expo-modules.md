@@ -154,3 +154,8 @@ console.log(Constants.systemFonts);
 
 - 当前文档未完整展开 Android、iOS 的所有 diff 细节。
 - 当前文档未涉及如何处理已有复杂原生自定义与这些改动冲突。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo 在现有 React Native 项目中的总览](./31_overview.md) | [下一页：从 React Native CLI 迁移到 Expo CLI →](./33_using-expo-cli.md)
+<!-- NAVIGATION END -->

@@ -144,3 +144,8 @@
 
 - 当前文档未涉及每种错误的完整深入排查流程。
 - 当前文档未涉及所有可能错误，只覆盖常见项。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo 的开发模式与生产模式](./43_development-mode.md) | [下一页：用 Android Studio 模拟器测试 Expo / React Native 应用 →](./45_android-studio-emulator.md)
+<!-- NAVIGATION END -->

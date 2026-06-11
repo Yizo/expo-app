@@ -778,3 +778,8 @@ imgSource: ImageSourcePropType
 - 使用 `@` 路径别名导入模块
 
 本章只完成了 UI 和临时点击反馈。真正从设备媒体库选择图片的功能不在当前文档范围内，将在下一章 **Use an image picker** 中实现。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 应用中添加导航](./2_add-navigation.md) | [下一页：使用 Expo Image Picker 选择并显示图片 →](./4_image-picker.md)
+<!-- NAVIGATION END -->

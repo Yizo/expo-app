@@ -91,3 +91,8 @@ app/public/index.tsx
 - `/favicon.ico` 允许覆盖。
 
 当前文档未涉及：自定义修改保留路径、生产托管平台额外保留的 URL、自动检测冲突的命令或 lint 规则。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 常见故障排查](./91_troubleshooting.md) | [下一页：从 React Navigation 迁移到 Expo Router →](./93_from-react-navigation.md)
+<!-- NAVIGATION END -->

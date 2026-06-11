@@ -105,3 +105,8 @@ npx expo-type-information module-interface --module ./expo-settings -w
 **基于文档内容推导**：应把 `.generated.ts` 视为不可编辑产物，把稳定文件作为公开 API 适配层，并在 CI 或开发脚本中检查生成结果是否同步。
 
 **当前文档未涉及**：Kotlin 类型来源、多 Swift 文件的复杂解析规则、CI 集成、版本兼容矩阵和自定义类型映射配置。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：在 Expo 应用内创建 Inline Module](./100_inline-modules-tutorial.md) | [下一页：创建带 Config Plugin 的 Expo 原生模块 →](./102_config-plugin-and-native-module-tutorial.md)
+<!-- NAVIGATION END -->

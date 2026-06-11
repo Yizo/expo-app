@@ -114,3 +114,8 @@ export const unstable_settings = {
 - Android/iOS 返回手势差异。
 - 生产构建中的路由故障。
 - 网络请求、深链接和认证重定向排查。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Router 测试配置](./90_testing.md) | [下一页：Expo Router 与 Metro 保留路径 →](./92_reserved-paths.md)
+<!-- NAVIGATION END -->

@@ -725,3 +725,8 @@ StyleSheet.create({
 - 标签可以根据激活状态显示不同的 Ionicons 图标。
 
 最关键的理解是：**Expo Router 使用文件和目录表达路由与导航层级，而 `_layout.tsx` 决定这一层路由由哪种导航器管理。**
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：创建你的第一个 Expo 应用](./1_create-your-first-app.md) | [下一页：使用 React Native 与 Expo 构建 StickerSmash 首屏 →](./3_build-a-screen.md)
+<!-- NAVIGATION END -->

@@ -41,3 +41,7 @@ Expo 负责处理其中大量平台通信复杂度，让应用前端和后端可
 
 本页未给出安装命令、配置文件、代码示例、API 请求格式、限流规则、错误码、平台限制或生产部署细节；这些内容由它链接的后续专题页面说明。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：Expo Modules API 的设计考量](./116_design.md) | [下一页：开始使用 Expo 通知前需要了解的概念 →](./118_what-you-need-to-know.md)
+<!-- NAVIGATION END -->

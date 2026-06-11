@@ -295,3 +295,8 @@ DOM components 更适合：
 - 与普通 `react-native-webview` 手写方案的完整性能对比
 - DOM components 的完整生产监控方案
 - OTA updates 未来支持时间表
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Publish websites 学习整理](./21_publishing-websites.md) | [下一页：Progressive web apps 学习整理 →](./23_progressive-web-apps.md)
+<!-- NAVIGATION END -->

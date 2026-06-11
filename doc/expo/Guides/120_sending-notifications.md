@@ -205,3 +205,7 @@ openssl s_client -connect exp.host:443 -servername exp.host
 
 本页未提供 token 数据库表结构、用户分群模型、业务级送达/已读确认、通知文案策略或直接连接 FCM/APNs 的完整实现。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：配置 Expo 推送通知](./119_push-notifications-setup.md) | [下一页：在 Expo 应用中处理收到的通知 →](./121_receiving-notifications.md)
+<!-- NAVIGATION END -->

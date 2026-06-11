@@ -102,3 +102,8 @@ const FirstInlineView = requireNativeView('FirstInlineView');
 **基于文档内容推导**：只服务单个应用且能接受实验性变更时，Inline Module 能降低目录和 package 管理成本；需要跨项目发布时不适合作为默认方案。
 
 **当前文档未涉及**：允许监听目录的完整清单、生产迁移策略、自动类型生成、测试和发布复用方式。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：创建 Expo 原生视图：封装系统 WebView](./99_native-view-tutorial.md) | [下一页：为 Expo 模块生成 TypeScript 接口 →](./101_type-generation-tutorial.md)
+<!-- NAVIGATION END -->

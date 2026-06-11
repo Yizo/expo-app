@@ -135,3 +135,8 @@ npx expo run:ios
 - 对新项目来说，直接从 Expo 起步比后迁移更省事。
 - 对老项目来说，迁移价值和成本取决于已有原生定制的数量与复杂度。
 - 当前文档未提供逐类型原生改动的完整迁移清单，只给出迁移思路与检查方向。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Add custom native code](./13_customizing.md) | [下一页：Build locally: Overview →](./15_local-app-overview.md)
+<!-- NAVIGATION END -->

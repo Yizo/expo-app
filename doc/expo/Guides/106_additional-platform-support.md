@@ -79,3 +79,7 @@ iOS/tvOS 使用 `UIKit`，macOS 使用 `AppKit`。`react-native-macos` 和 `expo
 
 文档明确给出 `apple` 配置、podspec、`pod install`、宿主准备和条件编译。未涉及发布、CI、测试矩阵、最低版本选择依据和 API 迁移清单。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：在现有 React Native 库中集成 Expo Modules API](./105_existing-library.md) | [下一页：Expo Modules API 参考 →](./107_module-api.md)
+<!-- NAVIGATION END -->

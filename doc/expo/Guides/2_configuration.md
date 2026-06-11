@@ -148,3 +148,8 @@ npx expo config --type public
 - 这套配置体系同时服务于“构建期”和“运行时”，所以它的重要性高于 Web 项目里常见的单纯打包配置。
 - 如果你把大量业务判断写进动态配置，配置文件会逐渐变成“构建逻辑代码”，维护难度会上升。
 - 当前文档未涉及具体每个 app config 字段的完整字典，只告诉你入口、解析规则和使用方式。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Develop an app with Expo](./1_overview.md) | [下一页：Continuous Native Generation (CNG) →](./3_continuous-native-generation.md)
+<!-- NAVIGATION END -->

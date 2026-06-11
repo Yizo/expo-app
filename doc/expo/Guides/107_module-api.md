@@ -84,3 +84,7 @@ enum 要实现 `Enumerable` 且底层为基础类型；Kotlin 构造参数必须
 
 本文档明确覆盖 DSL、类型转换、上下文和事件。未完整讲解脚手架、原生工程接入、发布、权限、测试和性能基准。
 
+<!-- NAVIGATION START -->
+---
+[← 上一页：为 Expo 模块增加 macOS 与 tvOS 支持](./106_additional-platform-support.md) | [下一页：Expo Inline Modules 参考 →](./108_inline-modules-reference.md)
+<!-- NAVIGATION END -->

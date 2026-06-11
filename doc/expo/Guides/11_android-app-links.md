@@ -155,3 +155,8 @@ eas credentials -p android
 - App Links 更适合正式对外链接入口，而不是只用于开发自测。
 - 这类问题通常无法只靠前端浏览器调试工具解决，因为验证主体是 Android 系统。
 - 当前文档未涉及应用内收到链接后如何导航到具体页面，只链接到入站处理文档。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：Linking into your app](./10_into-your-app.md) | [下一页：iOS Universal Links →](./12_ios-universal-links.md)
+<!-- NAVIGATION END -->

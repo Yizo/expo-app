@@ -155,3 +155,8 @@ Manifest 中需自行配置应用名称、图标、`start_url`、`display`、主
 > **基于文档内容推导：** 对旧 SPA，不要默认继续选择 `web.output: "single"`；应根据 SEO、社交预览和首屏加载需求重新评估是否改为 `static`。
 
 当前文档未涉及：每个 Webpack loader/plugin 的 Metro 对应方案、部署平台逐项配置、自动迁移工具、CSS 兼容问题的完整清单。
+
+<!-- NAVIGATION START -->
+---
+[← 上一页：从 React Navigation 迁移到 Expo Router](./93_from-react-navigation.md) | [下一页：Expo Router 从 SDK 55 迁移到 SDK 56 →](./95_sdk-55-to-56.md)
+<!-- NAVIGATION END -->
