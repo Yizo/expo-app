@@ -69,26 +69,6 @@ function getSlug(url) {
 	return slug;
 }
 
-function readExistingOutputs(outputDir) {
-	const outputs = [];
-
-	for (const name of fs.readdirSync(outputDir)) {
-		const match = name.match(/^(\d+)__(.+)\.md$/);
-		if (!match) {
-			continue;
-		}
-
-		outputs.push({
-			name,
-			number: Number(match[1]),
-			slug: match[2],
-			outputPath: path.join(outputDir, name),
-		});
-	}
-
-	return outputs.sort((left, right) => left.number - right.number);
-}
-
 function getNavLabel(slug) {
 	return slug.replace(/-/g, " ");
 }
@@ -116,40 +96,25 @@ function buildNavigationContext(tasks) {
 }
 
 function buildTaskQueue(entries, outputDir) {
-	const existingOutputs = readExistingOutputs(outputDir);
-	const existingBySlug = new Map();
-	let nextNumber = 1;
-
-	for (const output of existingOutputs) {
-		nextNumber = Math.max(nextNumber, output.number + 1);
-		if (!existingBySlug.has(output.slug)) {
-			existingBySlug.set(output.slug, output);
-		}
-	}
-
-	const claimedOutputs = new Set();
 	return entries.map((entry, index) => {
+		const lineNumber = index + 1;
+
 		if (entry.duplicate) {
-			return { ...entry, index, status: "duplicate" };
+			return { ...entry, index, lineNumber, status: "duplicate" };
 		}
 
 		const slug = getSlug(entry.url);
-		const existing = existingBySlug.get(slug);
-		if (existing && !claimedOutputs.has(existing.outputPath)) {
-			claimedOutputs.add(existing.outputPath);
-			return {
-				...entry,
-				index,
-				slug,
-				outputPath: existing.outputPath,
-				overwrite: true,
-			};
-		}
+		const outputPath = path.join(outputDir, `${lineNumber}__${slug}.md`);
+		const status = fs.existsSync(outputPath) ? "skipped" : "pending";
 
-		const outputPath = path.join(outputDir, `${nextNumber}__${slug}.md`);
-		nextNumber += 1;
-		claimedOutputs.add(outputPath);
-		return { ...entry, index, slug, outputPath, overwrite: false };
+		return {
+			...entry,
+			index,
+			lineNumber,
+			slug,
+			outputPath,
+			status,
+		};
 	});
 }
 
@@ -225,6 +190,10 @@ function generateMarkdown({ prompt, source, currentUrl }) {
 }
 
 async function processTask(task, promptTemplate, navigationContext) {
+	if (task.status === "skipped") {
+		return task;
+	}
+
 	try {
 		const source = await fetchPage(task.url);
 		const navigation = navigationContext.get(task.index) || { prev: "无", next: "无" };
@@ -241,7 +210,7 @@ async function processTask(task, promptTemplate, navigationContext) {
 		fs.writeFileSync(task.outputPath, content, "utf8");
 		return {
 			...task,
-			status: task.overwrite ? "overwritten" : "generated",
+			status: "generated",
 		};
 	} catch (error) {
 		return { ...task, status: "failed", error: error.message };
@@ -266,19 +235,44 @@ async function runWithConcurrency(tasks, maxConcurrency, worker) {
 }
 
 function printSummary(results) {
-	console.log("\nResult summary:");
+	const stats = {
+		total: results.length,
+		duplicate: 0,
+		skipped: 0,
+		generated: 0,
+		failed: 0,
+	};
+
+	console.log("\n=== 本次生成概览 ===");
 	for (const result of results) {
-		const number = String(result.index + 1).padStart(2, "0");
+		const number = String(result.lineNumber ?? result.index + 1).padStart(3, "0");
+		const filename = result.outputPath ? path.basename(result.outputPath) : "-";
+
 		if (result.status === "duplicate") {
+			stats.duplicate += 1;
 			console.log(`${number} SKIPPED duplicate ${result.url}`);
+		} else if (result.status === "skipped") {
+			stats.skipped += 1;
+			console.log(`${number} SKIPPED exists ${filename} <- ${result.url}`);
 		} else if (result.status === "failed") {
+			stats.failed += 1;
 			console.log(`${number} FAILED ${result.url}: ${result.error}`);
+		} else if (result.status === "generated") {
+			stats.generated += 1;
+			console.log(`${number} GENERATED ${filename} <- ${result.url}`);
+		} else if (result.status === "pending") {
+			console.log(`${number} PENDING ${filename} <- ${result.url}`);
 		} else {
-			console.log(
-				`${number} ${result.status.toUpperCase()} ${result.url} -> ${result.outputPath}`,
-			);
+			console.log(`${number} ${String(result.status).toUpperCase()} ${result.url}`);
 		}
 	}
+
+	console.log("\n--- 统计 ---");
+	console.log(`列表总行数: ${stats.total}`);
+	console.log(`重复 URL 跳过: ${stats.duplicate}`);
+	console.log(`已存在跳过: ${stats.skipped}`);
+	console.log(`本次新增生成: ${stats.generated}`);
+	console.log(`失败: ${stats.failed}`);
 }
 
 function parseArguments(argv) {
@@ -303,17 +297,18 @@ async function main(argv = process.argv.slice(2)) {
 
 	if (options.discoverOnly) {
 		printSummary(
-			tasks.map((task) =>
-				task.duplicate
-					? task
-					: { ...task, status: task.overwrite ? "overwritten" : "generated" },
-			),
+			tasks.map((task) => {
+				if (task.duplicate || task.status === "skipped") {
+					return task;
+				}
+				return { ...task, status: "pending" };
+			}),
 		);
-		console.log(`\nDiscovered ${tasks.filter((task) => !task.duplicate).length} unique URLs.`);
+		console.log(`\n待生成任务数: ${tasks.filter((task) => task.status === "pending").length}`);
 		return;
 	}
 
-	const runnableTasks = tasks.filter((task) => !task.duplicate);
+	const runnableTasks = tasks.filter((task) => task.status === "pending");
 	const navigationContext = buildNavigationContext(tasks);
 	const processed = await runWithConcurrency(runnableTasks, config.maxConcurrency, (task) =>
 		processTask(task, promptTemplate, navigationContext),

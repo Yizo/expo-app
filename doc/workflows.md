@@ -19,6 +19,7 @@
 7. Expo版本以互联网文档地址中的版本为主, 不要看本地版本
 8. 调用 `../tools/generate-expo-tutorial-docs.js` 脚本来生成, 不要生成额外的脚步工具
 9. 每篇生成的 Markdown 必须包含「上一页 / 下一页」导航，顺序以 `DOC_LIST_FILE` 为准
+10. 本次生成概览、任务状态、跳过原因等工作流元信息只能输出到控制台或对话回复，**不得写入**生成的 Markdown 文档
 
 ## 配置
 
@@ -61,12 +62,13 @@ MAX_CONCURRENCY = 20
 3. 读取 `DOC_LIST_FILE`。
 4. 清理文档列表。
 5. 按顺序构建任务队列。
-6. 使用最多 `MAX_CONCURRENCY` 个 agent 并行处理任务。
-7. 每个任务只处理一个 URL。
-8. 每个任务使用 `PROMPT_TEMPLATE`，将 `{{url}}` 替换为当前 URL。
-9. 生成当前 URL 对应的 Markdown 学习文档。
-10. 将结果保存到 `OUTPUT_DIR`。
-11. 所有任务完成后输出结果汇总。
+6. 判断每个任务的目标文件 `{{行序号}}__{{文件名}}.md` 是否已存在；已存在则跳过，不读取 URL、不生成、不覆盖。
+7. 使用最多 `MAX_CONCURRENCY` 个 agent 并行处理剩余任务。
+8. 每个任务只处理一个 URL。
+9. 每个任务使用 `PROMPT_TEMPLATE`，将 `{{url}}` 替换为当前 URL。
+10. 生成当前 URL 对应的 Markdown 学习文档。
+11. 将结果保存到 `OUTPUT_DIR`。
+12. 所有任务完成后，在控制台或对话中输出**本次生成概览**（统计新增、跳过、失败等），不得写入任何 Markdown 文档。
 
 ---
 
@@ -77,14 +79,18 @@ MAX_CONCURRENCY = 20
 处理逻辑：
 
 ```text
+lineNumber = currentLineNumberInDocList
+slug = lastPathSegment(currentUrl)
+outputPath = joinPath(OUTPUT_DIR, lineNumber + "__" + slug + ".md")
+
+if fileExists(outputPath):
+  markTaskSkipped(outputPath)
+  continue
+
 prompt = read(PROMPT_TEMPLATE)
 prompt = prompt.replace("{{url}}", currentUrl)
 
 content = generateMarkdown(prompt)
-
-filename = generateFilenameFromUrl(currentUrl)
-outputPath = joinPath(OUTPUT_DIR, filename)
-
 writeFile(outputPath, content)
 ```
 
@@ -93,7 +99,8 @@ writeFile(outputPath, content)
 1. 生成内容只能来自当前 URL 对应的文档。
 2. 不允许读取其他 URL 的文档内容。
 3. 不允许把多个文档内容混在一起。
-4. 不允许把工作流逻辑写入生成的学习文档。
+4. 不允许把工作流逻辑、任务状态、本次生成概览写入生成的学习文档。
+5. 目标文件已存在时必须跳过，不得覆盖。
 
 ---
 
@@ -122,10 +129,11 @@ actualConcurrency = min(MAX_CONCURRENCY, taskCount)
 
 规则：
 
-1. 以文档中顺序为编号, 从1开始递增
-2. 以URL最后一个pathname为文件名, 去掉.md后缀
-3. 最后拼接为`{{序号}}__{{文件名}}.md`
-4. 假如当前目录中存在同名的则覆盖, 非同名的先读取文件名以编号来递增
+1. 编号等于 `DOC_LIST_FILE` 中的**行序号**（从 1 开始，空行和 `#` 注释行不计）
+2. 以 URL 最后一个 pathname 为文件名，去掉 `.md` 后缀
+3. 最后拼接为 `{{行序号}}__{{文件名}}.md`
+4. 同一 slug 出现在不同行时，仍按行序号分别编号，**禁止**按 slug 复用旧文件路径
+5. 若 `{{行序号}}__{{文件名}}.md` 已存在，跳过该任务，不覆盖
 
 示例：
 
@@ -147,10 +155,53 @@ visitedUrls = []
 规则：
 
 1. 重复 URL 跳过，不终止流程。
-2. 单个 URL 读取失败、生成失败或保存失败，只记录失败并继续处理其他 URL。
-3. 不生成空文件。
-4. 不用错误信息代替学习文档内容。
-5. 只有 `DOC_LIST_FILE` 读取失败、`OUTPUT_DIR` 无法创建等全局错误，才终止整个流程。
+2. 目标文件 `{{行序号}}__{{文件名}}.md` 已存在时跳过，不终止流程。
+3. 单个 URL 读取失败、生成失败或保存失败，只记录失败并继续处理其他 URL。
+4. 不生成空文件。
+5. 不用错误信息代替学习文档内容。
+6. 只有 `DOC_LIST_FILE` 读取失败、`OUTPUT_DIR` 无法创建等全局错误，才终止整个流程。
+7. 全部任务完成后，必须对 `OUTPUT_DIR` 中所有 Markdown 执行一次「文档导航编号」校验；发现错误则按规则修复，不得跳过。
+
+### 本次生成概览（仅输出到控制台或对话）
+
+全部任务结束后输出，**不得写入 Markdown 文档**。建议包含：
+
+1. 列表总行数、已存在跳过数、本次新增生成数、失败数、重复 URL 跳过数。
+2. 按 `DOC_LIST_FILE` 顺序列出每条任务的状态：`SKIPPED exists`、`GENERATED`、`FAILED`、`SKIPPED duplicate`。
+3. 若有失败项，列出对应行序号、URL 和错误原因。
+
+### 文档导航编号校验与修复
+
+文件名格式为 `{{行序号}}__{{slug}}.md`，其中 `{{行序号}}` 必须与 `DOC_LIST_FILE` 中对应 URL 的行序号一致（从 1 开始，跳过空行和注释行）。
+
+每篇文档末尾的 `## 文档导航` 必须满足：
+
+1. 编号为 `N` 的文件，**上一页**必须指向 `N-1`（`N=1` 时写「无」）。
+2. 编号为 `N` 的文件，**下一页**必须指向 `N+1`（`N` 为最大编号时写「无」）。
+3. 链接目标文件名中的编号必须与上述规则一致，禁止跳号、禁止指向不存在文件、禁止复用其他编号区间的同名组件文档。
+4. 双向一致：若 `A` 的下一页是 `B`，则 `B` 的上一页必须是 `A`。
+5. 每篇文档的导航区块只能各包含一行「上一页」和一行「下一页」。
+
+校验提示词：
+
+```text
+审查 {{OUTPUT_DIR}} 目录下所有 Markdown 文件的「## 文档导航」区块。
+
+规则：
+- 文件名前缀编号为 N（如 137__button.md 的 N=137）
+- 上一页：若 N>1，必须链接到 (N-1)__*.md；若 N=1，必须为「无」
+- 下一页：若 N 不是最大编号，必须链接到 (N+1)__*.md；若 N 是最大编号，必须为「无」
+- 禁止链接到编号不等于 N-1 或 N+1 的文件
+
+请列出所有不符合规则的文档，并修复导航链接。修复时只改「## 文档导航」区块，不要改动正文内容。
+修复完成后重新全量校验，直到 0 处错误。
+```
+
+修复要求：
+
+1. 只修改 `## 文档导航` 及其下方的上一页 / 下一页行，不得改动正文。
+2. 链接文字可使用目标文件 slug（连字符转空格、小写），显示名不一致不影响校验通过。
+3. 修复后必须重新全量校验，确认编号链可从 `1` 连续走到最大编号，且双向一致。
 
 请阅读并严格执行 `doc/workflows.md`，根据其中的配置和流程生成本地 Markdown 文件。
 
