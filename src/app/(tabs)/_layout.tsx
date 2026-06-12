@@ -1,5 +1,10 @@
-import AppTabs from '@/components/app-tabs';
+import { Tabs } from "expo-router";
 
 export default function TabsLayout() {
-  return <AppTabs />;
+	return (
+		<Tabs>
+			<Tabs.Screen name="index" options={{ title: "首页" }} />
+			<Tabs.Screen name="about" options={{ title: "关于" }} />
+		</Tabs>
+	);
 }
