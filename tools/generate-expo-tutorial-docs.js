@@ -95,6 +95,30 @@ function buildNavigationContext(tasks) {
 	return navByIndex;
 }
 
+function buildNavigationBlock(navigation) {
+	return [
+		"---",
+		"",
+		"## 文档导航",
+		"",
+		`- **上一页**：${navigation.prev}`,
+		`- **下一页**：${navigation.next}`,
+		"",
+	].join("\n");
+}
+
+function replaceNavigationBlock(content, navigation) {
+	const navigationBlockPattern =
+		/(?:\r?\n)?---\r?\n\r?\n## 文档导航\r?\n\r?\n- \*\*上一页\*\*：[^\n]*\r?\n- \*\*下一页\*\*：[^\n]*\s*$/;
+	const body = content.replace(navigationBlockPattern, "").trimEnd();
+	return `${body}\n\n${buildNavigationBlock(navigation)}`;
+}
+
+function verifyNavigationBlock(content, navigation) {
+	const expectedBlock = buildNavigationBlock(navigation).trim();
+	return content.trimEnd().endsWith(expectedBlock);
+}
+
 function buildTaskQueue(entries, outputDir) {
 	return entries.map((entry, index) => {
 		const lineNumber = index + 1;
@@ -234,7 +258,52 @@ async function runWithConcurrency(tasks, maxConcurrency, worker) {
 	return results;
 }
 
-function printSummary(results) {
+function repairNavigation(outputDir, tasks, navigationContext) {
+	const report = {
+		checked: 0,
+		repaired: 0,
+		missingFiles: [],
+		invalidFiles: [],
+	};
+
+	for (const task of tasks) {
+		if (task.duplicate) {
+			continue;
+		}
+
+		if (!fs.existsSync(task.outputPath)) {
+			report.missingFiles.push({
+				lineNumber: task.lineNumber,
+				url: task.url,
+				outputPath: task.outputPath,
+			});
+			continue;
+		}
+
+		const navigation = navigationContext.get(task.index) || { prev: "无", next: "无" };
+		const currentContent = fs.readFileSync(task.outputPath, "utf8");
+		const nextContent = replaceNavigationBlock(currentContent, navigation);
+
+		report.checked += 1;
+
+		if (nextContent !== currentContent) {
+			fs.writeFileSync(task.outputPath, nextContent, "utf8");
+			report.repaired += 1;
+		}
+
+		const verifiedContent = fs.readFileSync(task.outputPath, "utf8");
+		if (!verifyNavigationBlock(verifiedContent, navigation)) {
+			report.invalidFiles.push({
+				lineNumber: task.lineNumber,
+				outputPath: task.outputPath,
+			});
+		}
+	}
+
+	return report;
+}
+
+function printSummary(results, navigationReport = null) {
 	const stats = {
 		total: results.length,
 		duplicate: 0,
@@ -273,6 +342,26 @@ function printSummary(results) {
 	console.log(`已存在跳过: ${stats.skipped}`);
 	console.log(`本次新增生成: ${stats.generated}`);
 	console.log(`失败: ${stats.failed}`);
+
+	if (navigationReport) {
+		console.log("\n--- 导航校验 ---");
+		console.log(`已检查: ${navigationReport.checked}`);
+		console.log(`已修复: ${navigationReport.repaired}`);
+		console.log(`缺失文件: ${navigationReport.missingFiles.length}`);
+		console.log(`校验失败: ${navigationReport.invalidFiles.length}`);
+
+		for (const missingFile of navigationReport.missingFiles) {
+			console.log(
+				`NAV MISSING ${String(missingFile.lineNumber).padStart(3, "0")} ${missingFile.outputPath} <- ${missingFile.url}`,
+			);
+		}
+
+		for (const invalidFile of navigationReport.invalidFiles) {
+			console.log(
+				`NAV INVALID ${String(invalidFile.lineNumber).padStart(3, "0")} ${invalidFile.outputPath}`,
+			);
+		}
+	}
 }
 
 function parseArguments(argv) {
@@ -315,9 +404,14 @@ async function main(argv = process.argv.slice(2)) {
 	);
 	const processedByIndex = new Map(processed.map((result) => [result.index, result]));
 	const results = tasks.map((task) => processedByIndex.get(task.index) || task);
+	const navigationReport = repairNavigation(config.outputDir, tasks, navigationContext);
 
-	printSummary(results);
-	if (processed.some((result) => result.status === "failed")) {
+	printSummary(results, navigationReport);
+	if (
+		processed.some((result) => result.status === "failed") ||
+		navigationReport.missingFiles.length > 0 ||
+		navigationReport.invalidFiles.length > 0
+	) {
 		process.exitCode = 1;
 	}
 }
@@ -331,11 +425,15 @@ if (require.main === module) {
 
 module.exports = {
 	buildNavigationContext,
+	buildNavigationBlock,
 	buildTaskQueue,
 	getNavLabel,
 	getNavLink,
 	getSlug,
 	parseDocumentList,
 	parseWorkflowConfig,
+	repairNavigation,
+	replaceNavigationBlock,
 	runWithConcurrency,
+	verifyNavigationBlock,
 };
