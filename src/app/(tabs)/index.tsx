@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	text: {
-		color: "white",
+		color: "#000",
 	},
 });
 

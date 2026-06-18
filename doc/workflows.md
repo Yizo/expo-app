@@ -26,9 +26,9 @@
 所有可变配置只在这里写一次，后续流程只能引用变量。
 
 ```text
-DOC_LIST_FILE = ./docs-list.txt
+DOC_LIST_FILE = ./Guides/docs-list.txt
 PROMPT_TEMPLATE = ./Prompt.md
-OUTPUT_DIR = ./expo/Reference
+OUTPUT_DIR = ./expo/Guides
 MAX_CONCURRENCY = 20
 ```
 

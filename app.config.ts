@@ -208,6 +208,8 @@ export default (): ExpoConfig => ({
 			ITSAppUsesNonExemptEncryption: false,
 		},
 		appleTeamId: "BV3PMNNNFY",
+		// 隐私清单
+		privacyManifests: {},
 	},
 
 	android: {

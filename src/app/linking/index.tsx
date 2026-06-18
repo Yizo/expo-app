@@ -34,20 +34,26 @@ export default function LinkingPage() {
 				<Text style={styles.headerText}>深度链接</Text>
 			</View>
 			<Button
-				title="打开官网"
+				title="打开官网(Linking.openURL)"
 				onPress={() => {
 					Linking.openURL("https://expo.dev");
 				}}
 			/>
 			<Button
-				title="打电话"
+				title="打电话(Linking.openURL)"
 				onPress={() => {
 					Linking.openURL("tel:10086");
 				}}
 			/>
-			<Link href="https://expo.dev">Go to Expo</Link>
 			<Button
-				title="打开网页(百度)"
+				title="发短信(Linking.openURL)"
+				onPress={() => {
+					Linking.openURL("sms:1234567890");
+				}}
+			/>
+			<Link href="https://expo.dev">Go to Expo(Link)</Link>
+			<Button
+				title="打开网页(百度)(WebBrowser.openBrowserAsync)"
 				onPress={() => WebBrowser.openBrowserAsync("https://www.baidu.com")}
 			/>
 		</ScrollView>
