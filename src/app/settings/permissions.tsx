@@ -10,6 +10,7 @@ import {
 	View,
 } from "react-native";
 
+import { FontSizes } from "@/constants/theme";
 import type { AppPermissionResult } from "@/utils/permissions";
 import {
 	ensureBackgroundLocationAccess,
@@ -121,12 +122,12 @@ const styles = StyleSheet.create({
 	},
 	introTitle: {
 		color: "#FFFFFF",
-		fontSize: 22,
+		fontSize: FontSizes.headline,
 		fontWeight: "700",
 	},
 	introText: {
 		color: "#D0D5DD",
-		fontSize: 14,
+		fontSize: FontSizes.bodySm,
 		lineHeight: 20,
 	},
 	card: {
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
 	},
 	cardTitle: {
 		flex: 1,
-		fontSize: 17,
+		fontSize: FontSizes.subheading,
 		fontWeight: "700",
 		color: "#101828",
 	},
@@ -157,11 +158,11 @@ const styles = StyleSheet.create({
 		borderRadius: 999,
 	},
 	statusText: {
-		fontSize: 12,
+		fontSize: FontSizes.caption,
 		fontWeight: "700",
 	},
 	cardDescription: {
-		fontSize: 14,
+		fontSize: FontSizes.bodySm,
 		lineHeight: 20,
 		color: "#475467",
 	},
@@ -184,7 +185,7 @@ const styles = StyleSheet.create({
 	},
 	buttonText: {
 		color: "#FFFFFF",
-		fontSize: 14,
+		fontSize: FontSizes.bodySm,
 		fontWeight: "600",
 	},
 	resultBox: {
@@ -194,13 +195,13 @@ const styles = StyleSheet.create({
 		gap: 6,
 	},
 	resultLabel: {
-		fontSize: 12,
+		fontSize: FontSizes.caption,
 		fontWeight: "700",
 		color: "#344054",
 		letterSpacing: 0.2,
 	},
 	resultText: {
-		fontSize: 13,
+		fontSize: FontSizes.footnote,
 		lineHeight: 19,
 		color: "#475467",
 	},
