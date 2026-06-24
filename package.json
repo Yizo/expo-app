@@ -1,6 +1,6 @@
 {
 	"name": "expo-app",
-	"main": "expo-router/entry",
+	"main": "src/index.ts",
 	"version": "1.0.0",
 	"dependencies": {
 		"@expo-google-fonts/inter": "^0.4.2",
