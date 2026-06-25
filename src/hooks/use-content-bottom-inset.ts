@@ -12,7 +12,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 export default function useContentBottomInset() {
 	const insets = useSafeAreaInsets();
 	const segments = useSegments();
-	const isInsideTabs = segments[0] === "(tabs)";
+	const isInsideTabs = (segments as readonly string[]).includes("(tabs)");
 
 	if (isInsideTabs) {
 		return Spacing.four;
