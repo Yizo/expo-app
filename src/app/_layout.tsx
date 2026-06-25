@@ -1,9 +1,29 @@
 import NavigationThemeProvider from "@/components/NavigationThemeProvider";
 import useAuthState, { AuthProvider } from "@/hooks/useAuthState";
 import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
+
+void SplashScreen.preventAutoHideAsync();
+
+function SplashScreenController() {
+	const { isLoading } = useAuthState();
+
+	useEffect(() => {
+		if (!isLoading) {
+			void SplashScreen.hideAsync();
+		}
+	}, [isLoading]);
+
+	return null;
+}
 
 function RootNavigator() {
-	const { isLoggedIn } = useAuthState();
+	const { isLoading, isLoggedIn } = useAuthState();
+
+	if (isLoading) {
+		return null;
+	}
 
 	return (
 		<NavigationThemeProvider>
@@ -23,6 +43,7 @@ function RootNavigator() {
 export default function RootLayout() {
 	return (
 		<AuthProvider>
+			<SplashScreenController />
 			<RootNavigator />
 		</AuthProvider>
 	);
