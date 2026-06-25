@@ -4,6 +4,7 @@ import { useTheme } from "@/hooks/use-theme";
 import type { ReactNode } from "react";
 import type { ScrollViewProps, StyleProp, ViewStyle } from "react-native";
 import { ScrollView, StyleSheet, View, useWindowDimensions } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type ScreenShellProps = Omit<ScrollViewProps, "children" | "contentContainerStyle"> & {
 	/** 覆盖自动计算的底部留白；默认根据安全区 / 是否在 Tab 内动态计算。 */
@@ -12,6 +13,8 @@ type ScreenShellProps = Omit<ScrollViewProps, "children" | "contentContainerStyl
 	contentContainerStyle?: StyleProp<ViewStyle>;
 	/** 为 true 时，子组件可用 flex: 1 铺满壳层内的可视区域。 */
 	fill?: boolean;
+	/** 为没有导航栏的页面显式避开顶部安全区。 */
+	topSafeArea?: boolean;
 };
 
 export default function ScreenShell({
@@ -21,11 +24,14 @@ export default function ScreenShell({
 	contentInsetAdjustmentBehavior = "automatic",
 	fill = false,
 	style,
+	topSafeArea = true,
 	...scrollViewProps
 }: ScreenShellProps) {
 	const colors = useTheme();
+	const insets = useSafeAreaInsets();
 	const defaultBottomInset = useContentBottomInset();
 	const resolvedBottomInset = bottomInset ?? defaultBottomInset;
+	const resolvedTopInset = topSafeArea ? insets.top : 0;
 	const { width } = useWindowDimensions();
 	const horizontalPadding = width >= 768 ? 28 : 20;
 	const contentWidth = Math.min(MaxContentWidth, width - horizontalPadding * 2);
@@ -39,7 +45,11 @@ export default function ScreenShell({
 			style={[styles.screen, { backgroundColor: colors.background }, style]}
 			contentContainerStyle={[
 				styles.scrollContent,
-				{ paddingBottom: resolvedBottomInset, paddingHorizontal: horizontalPadding },
+				{
+					paddingBottom: resolvedBottomInset,
+					paddingHorizontal: horizontalPadding,
+					paddingTop: resolvedTopInset,
+				},
 				contentContainerStyle,
 			]}
 		>

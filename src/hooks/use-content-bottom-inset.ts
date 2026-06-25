@@ -3,15 +3,16 @@ import { useSegments } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 /**
- * Bottom padding for scrollable screen content.
+ * 可滚动页面内容的底部留白。
  *
- * Tab screens: Native Tabs already adjust scroll content for the tab bar
- * (iOS ScrollView content inset / Android bottom SafeAreaView).
- * Non-tab screens: use the runtime safe-area bottom inset.
+ * Tab 内页面：Native Tabs 已处理 Tab 栏占位（iOS 的 ScrollView content inset /
+ * Android 底部 SafeAreaView），只需固定小间距。
+ * 非 Tab 页面：使用运行时安全区 bottom inset，避免内容贴底或被 Home 指示条遮挡。
  */
 export default function useContentBottomInset() {
 	const insets = useSafeAreaInsets();
 	const segments = useSegments();
+	// 判断当前路由是否在 (tabs) 分组内
 	const isInsideTabs = (segments as readonly string[]).includes("(tabs)");
 
 	if (isInsideTabs) {
