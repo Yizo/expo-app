@@ -1,4 +1,4 @@
-import useDrawerPage from "@/app/drawer-page/drawer-page-context";
+import useDrawerPage from "@/hooks/use-drawer-page";
 import ScreenShell from "@/components/ui/screen-shell";
 import { Stack, useNavigation } from "expo-router";
 import type { DrawerNavigationProp } from "expo-router/drawer";

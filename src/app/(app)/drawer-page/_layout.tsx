@@ -1,4 +1,4 @@
-import useDrawerPage, { DrawerPageProvider } from "@/app/drawer-page/drawer-page-context";
+import useDrawerPage, { DrawerPageProvider } from "@/hooks/use-drawer-page";
 import { Drawer, type DrawerContentComponentProps } from "expo-router/drawer";
 import { Button, useWindowDimensions, View } from "react-native";
 
