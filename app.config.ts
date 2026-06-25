@@ -84,6 +84,7 @@ const plugins = [
 			},
 		},
 	],
+	"expo-secure-store",
 
 	[
 		"expo-font",
