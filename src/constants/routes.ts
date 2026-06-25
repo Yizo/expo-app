@@ -2,7 +2,6 @@ import type { Href } from "expo-router";
 
 export const ROUTES = {
 	home: "/",
-	authSheet: "/auth-sheet",
 	signIn: "/sign-in",
 	createAccount: "/create-account",
 	linking: "/linking",
@@ -14,10 +13,4 @@ export const ROUTES = {
 
 export function feedPostPath(postId: string | number): Href {
 	return `/feed/${postId}` as Href;
-}
-
-const AUTH_ROUTE_PATHS = new Set<string>([ROUTES.authSheet, ROUTES.signIn, ROUTES.createAccount]);
-
-export function isAuthRoute(pathname: string) {
-	return AUTH_ROUTE_PATHS.has(pathname);
 }
