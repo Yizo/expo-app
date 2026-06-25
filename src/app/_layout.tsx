@@ -27,7 +27,7 @@ function RootNavigator() {
 
 	return (
 		<NavigationThemeProvider>
-			<Stack screenOptions={{ headerShown: false }}>
+			<Stack screenOptions={{ headerShown: false, headerBackTitle: "返回" }}>
 				<Stack.Protected guard={isLoggedIn}>
 					<Stack.Screen name="(app)" options={{ headerShown: false }} />
 				</Stack.Protected>
