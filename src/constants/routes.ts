@@ -9,6 +9,7 @@ export const ROUTES = {
 	settingsPermissions: "/settings/permissions",
 	feed: "/feed",
 	stackPage: "/stack-page",
+	drawerPage: "/drawer-page",
 } as const satisfies Record<string, Href>;
 
 export function feedPostPath(postId: string | number): Href {

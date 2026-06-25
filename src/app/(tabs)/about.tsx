@@ -38,6 +38,11 @@ export default function About() {
 			title: "Stack 页面",
 			onPress: () => router.push(ROUTES.stackPage),
 		},
+		{
+			id: "drawer-page",
+			title: "Drawer 页面",
+			onPress: () => router.push(ROUTES.drawerPage),
+		},
 	];
 
 	if (!isLoggedIn) {

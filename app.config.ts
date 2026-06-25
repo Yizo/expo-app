@@ -73,7 +73,7 @@ const withDisableIosPushNotifications: ConfigPlugin = (config) => {
 
 const plugins = [
 	"expo-router",
-
+	"@react-native-vector-icons/ionicons",
 	[
 		"expo-splash-screen",
 		{

@@ -53,6 +53,12 @@ function RootNavigator() {
 						headerShown: false,
 					}}
 				/>
+				<Stack.Screen
+					name="drawer-page"
+					options={{
+						title: "Drawer页面",
+					}}
+				/>
 			</Stack>
 		</NavigationThemeProvider>
 	);
