@@ -1,16 +1,41 @@
-import { createContext, createElement, useContext, useState, type ReactNode } from "react";
+import useStorageState from "@/hooks/use-storage-state";
+import { createContext, createElement, useCallback, useContext, type ReactNode } from "react";
+
+const AUTH_SESSION_KEY = "auth.session";
+const DEMO_SESSION = "demo-session";
 
 type AuthState = {
+	isLoading: boolean;
 	isLoggedIn: boolean;
-	setIsLoggedIn: (value: boolean) => void;
+	session: string | null;
+	signIn: () => void;
+	signOut: () => void;
 };
 
 const AuthContext = createContext<AuthState | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-	const [isLoggedIn, setIsLoggedIn] = useState(true);
+	const [[isLoading, session], setSession] = useStorageState(AUTH_SESSION_KEY);
+	const signIn = useCallback(() => {
+		setSession(DEMO_SESSION);
+	}, [setSession]);
+	const signOut = useCallback(() => {
+		setSession(null);
+	}, [setSession]);
 
-	return createElement(AuthContext.Provider, { value: { isLoggedIn, setIsLoggedIn } }, children);
+	return createElement(
+		AuthContext.Provider,
+		{
+			value: {
+				isLoading,
+				isLoggedIn: !!session,
+				session,
+				signIn,
+				signOut,
+			},
+		},
+		children,
+	);
 }
 
 export default function useAuthState() {

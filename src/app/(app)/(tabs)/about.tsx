@@ -4,7 +4,6 @@ import SurfaceCard from "@/components/ui/surface-card";
 import { ROUTES } from "@/constants/routes";
 import { Fonts, FontSizes, Radii, Spacing } from "@/constants/theme";
 import { useTheme } from "@/hooks/use-theme";
-import useAuthActions from "@/hooks/useAuthActions";
 import useAuthState from "@/hooks/useAuthState";
 import { Stack, useRouter } from "expo-router";
 import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
@@ -18,8 +17,7 @@ type SettingsItem = {
 
 export default function About() {
 	const router = useRouter();
-	const { isLoggedIn, setIsLoggedIn } = useAuthState();
-	const { goToSignIn } = useAuthActions();
+	const { isLoggedIn, signOut } = useAuthState();
 	const colors = useTheme();
 
 	const settingsItems: SettingsItem[] = [
@@ -45,21 +43,13 @@ export default function About() {
 		},
 	];
 
-	if (!isLoggedIn) {
-		settingsItems.push({
-			id: "sign-in",
-			title: "登录",
-			onPress: goToSignIn,
-		});
-	}
-
 	const handleLogout = () => {
 		Alert.alert("退出登录", "确定要退出当前账号吗？", [
 			{ text: "取消", style: "cancel" },
 			{
 				text: "退出",
 				style: "destructive",
-				onPress: () => setIsLoggedIn(false),
+				onPress: signOut,
 			},
 		]);
 	};
@@ -135,15 +125,11 @@ export default function About() {
 								</Text>
 							</View>
 						</View>
-						{isLoggedIn ? (
-							<ActionButton
-								label="退出登录"
-								onPress={handleLogout}
-								variant="secondary"
-							/>
-						) : (
-							<ActionButton label="去登录" onPress={goToSignIn} />
-						)}
+						<ActionButton
+							label="退出登录"
+							onPress={handleLogout}
+							variant="secondary"
+						/>
 					</SurfaceCard>
 				</Animated.View>
 			</ScreenShell>

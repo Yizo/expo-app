@@ -3,7 +3,7 @@ import useAuthState from "@/hooks/useAuthState";
 import { useRouter } from "expo-router";
 
 export default function useAuthActions() {
-	const { setIsLoggedIn } = useAuthState();
+	const { signIn } = useAuthState();
 	const router = useRouter();
 
 	const goToSignIn = () => {
@@ -15,7 +15,7 @@ export default function useAuthActions() {
 	};
 
 	const completeAuth = () => {
-		setIsLoggedIn(true);
+		signIn();
 		router.replace(ROUTES.home);
 	};
 
