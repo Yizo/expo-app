@@ -39,6 +39,11 @@ export default function About() {
 			onPress: () => router.push(ROUTES.stackPage),
 		},
 		{
+			id: "stack-toolbar",
+			title: "Stack Toolbar 示例",
+			onPress: () => router.push(ROUTES.stackToolbar),
+		},
+		{
 			id: "drawer-page",
 			title: "Drawer 页面",
 			onPress: () => router.push(ROUTES.drawerPage),

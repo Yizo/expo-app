@@ -8,6 +8,7 @@ export const ROUTES = {
 	settingsPermissions: "/settings/permissions",
 	feed: "/feed",
 	stackPage: "/stack-page",
+	stackToolbar: "/stack-toolbar",
 	drawerPage: "/drawer-page",
 } as const satisfies Record<string, Href>;
 

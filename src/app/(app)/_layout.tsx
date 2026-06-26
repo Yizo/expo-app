@@ -8,6 +8,7 @@ export default function AppLayout() {
 		<Stack screenOptions={headerOptions}>
 			<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 			<Stack.Screen name="linking" options={{ title: "深度链接" }} />
+			<Stack.Screen name="stack-toolbar" options={{ title: "Stack Toolbar" }} />
 			<Stack.Screen
 				name="stack-page"
 				options={{
