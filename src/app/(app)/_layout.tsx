@@ -1,29 +1,11 @@
-import { Colors } from "@/constants/theme";
-import { useColorScheme } from "@/hooks/use-color-scheme";
+import useStackHeaderOptions from "@/hooks/use-stack-header-options";
 import { Stack } from "expo-router";
 
 export default function AppLayout() {
-	const scheme = useColorScheme();
-	const themeKey = scheme === "dark" ? "dark" : "light";
-	const colors = Colors[themeKey];
+	const headerOptions = useStackHeaderOptions();
 
 	return (
-		<Stack
-			screenOptions={{
-				headerBackTitle: "返回",
-				headerBackButtonDisplayMode: "generic",
-				headerStyle: {
-					backgroundColor: colors.surface,
-				},
-				headerTintColor: colors.text,
-				headerTitleStyle: {
-					color: colors.text,
-				},
-				contentStyle: {
-					backgroundColor: colors.background,
-				},
-			}}
-		>
+		<Stack screenOptions={headerOptions}>
 			<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 			<Stack.Screen name="linking" options={{ title: "深度链接" }} />
 			<Stack.Screen

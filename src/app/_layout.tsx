@@ -1,9 +1,8 @@
 import NavigationThemeProvider from "@/components/NavigationThemeProvider";
-import { useColorScheme } from "@/hooks/use-color-scheme";
+import AppStatusBar from "@/components/system/app-status-bar";
 import useAuthState, { AuthProvider } from "@/hooks/useAuthState";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 
 void SplashScreen.preventAutoHideAsync();
@@ -18,18 +17,6 @@ function SplashScreenController() {
 	}, [isLoading]);
 
 	return null;
-}
-
-function AppStatusBar() {
-	const scheme = useColorScheme();
-
-	return (
-		<StatusBar
-			animated
-			hidden={false}
-			style={scheme === "dark" ? "light" : "dark"}
-		/>
-	);
 }
 
 function RootNavigator() {
