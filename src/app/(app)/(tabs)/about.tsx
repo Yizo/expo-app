@@ -6,10 +6,11 @@ import { Fonts, FontSizes, Radii, Spacing } from "@/constants/theme";
 import { useTheme } from "@/hooks/use-theme";
 import useAuthState from "@/hooks/useAuthState";
 import { Stack, useRouter } from "expo-router";
-import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
+import { Alert, Platform, Pressable, StyleSheet, Text, View } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 
 type SettingsItem = {
+	hidden?: boolean;
 	id: string;
 	title: string;
 	onPress: () => void;
@@ -25,6 +26,7 @@ export default function About() {
 			id: "permissions",
 			title: "权限设置",
 			onPress: () => router.push(ROUTES.settingsPermissions),
+			hidden: Platform.OS === "web",
 		},
 		{
 			id: "linking",
@@ -64,7 +66,9 @@ export default function About() {
 							通用
 						</Text>
 						<View style={styles.list}>
-							{settingsItems.map((item, index) => (
+							{settingsItems
+								.filter((item) => !item.hidden)
+								.map((item, index, items) => (
 								<Pressable
 									key={item.id}
 									onPress={item.onPress}
@@ -75,7 +79,7 @@ export default function About() {
 												? colors.surfaceMuted
 												: colors.surface,
 										},
-										index < settingsItems.length - 1 && [
+										index < items.length - 1 && [
 											styles.rowBorder,
 											{ borderBottomColor: colors.border },
 										],

@@ -287,7 +287,6 @@ export default function PermissionPage() {
 			<Stack.Screen
 				options={{
 					title: "权限设置",
-					headerBackTitle: "返回",
 					headerShown: true,
 				}}
 			/>
