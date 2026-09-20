@@ -18,6 +18,10 @@ export default function AppTabs() {
 				<NativeTabs.Trigger.Icon md="library_books" />
 				<NativeTabs.Trigger.Label>Feed</NativeTabs.Trigger.Label>
 			</NativeTabs.Trigger>
+			<NativeTabs.Trigger name="demo">
+				<NativeTabs.Trigger.Icon md="science" />
+				<NativeTabs.Trigger.Label>Demo</NativeTabs.Trigger.Label>
+			</NativeTabs.Trigger>
 			<NativeTabs.Trigger name="about">
 				<NativeTabs.Trigger.Icon md="settings" />
 				<NativeTabs.Trigger.Label>设置</NativeTabs.Trigger.Label>

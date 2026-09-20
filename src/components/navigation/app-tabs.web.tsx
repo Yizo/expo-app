@@ -21,6 +21,7 @@ export default function AppTabs() {
 		>
 			<Tabs.Screen name="index" options={{ title: "首页" }} />
 			<Tabs.Screen name="feed" options={{ title: "Feed" }} />
+			<Tabs.Screen name="demo" options={{ title: "Demo" }} />
 			<Tabs.Screen name="about" options={{ title: "设置" }} />
 		</Tabs>
 	);
