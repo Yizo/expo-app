@@ -53,6 +53,7 @@
 		"android:device": "expo run:android --device",
 		"ios": "expo run:ios",
 		"ios:device": "expo run:ios --device",
+		"team-id": "node scripts/print-apple-team-id.js",
 		"web": "expo start --web",
 		"start": "expo start",
 		"lint": "expo lint",

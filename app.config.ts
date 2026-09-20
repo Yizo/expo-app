@@ -4,23 +4,12 @@ import { withEntitlementsPlist, withInfoPlist, withXcodeProject } from "expo/con
 
 type ExpoPlugins = NonNullable<ExpoConfig["plugins"]>;
 
-// 注意：iOS 真机 Personal Team 不支持 Push Notifications，需要在真机打包时注释掉 notificationPlugin
-const notificationPlugin = [
-	"expo-notifications",
-	{
-		icon: "./assets/images/splash-icon.png",
-		color: "#ffffff",
-		defaultChannel: "default",
-		sounds: [],
-
-		// true = 启用 iOS 后台远程推送 capability
-		enableBackgroundRemoteNotifications: true,
-	},
-] as const;
-
 /**
  * iOS Personal Team 真机调试专用：
  * 删除 Push Notifications 相关配置，避免免费 Apple ID 签名失败。
+ *
+ * 注意：必须排在 expo-notifications 之前注册（洋葱模型：后注册的 mod 先跑，
+ * 这样 notifications 先写入 aps-environment，本插件再删掉）。
  *
  * 清理内容：
  * 1. Entitlements: aps-environment
@@ -176,20 +165,36 @@ const plugins = [
 	],
 
 	"expo-image",
-	/**
-	 * 默认开启通知插件。
-	 */
-	notificationPlugin,
 
 	/**
-	 * iOS 真机 Personal Team 打包时放开这一行。
+	 * 必须写在 expo-notifications 之前。
+	 *
+	 * Expo config plugin 是洋葱模型：后注册的 mod 先执行。
+	 * 若放在 notifications 后面，会先删掉 aps-environment，再被 notifications 重新写入，
+	 * Personal Team 仍会报 Push Notifications 不支持。
 	 *
 	 * 作用：
-	 * - 删除 aps-environment
+	 * - 删除 aps-environment（真正触发 Push capability 的项）
 	 * - 删除 UIBackgroundModes.remote-notification
 	 * - 删除 Xcode Push Notifications capability
 	 */
-	//withDisableIosPushNotifications,
+	withDisableIosPushNotifications,
+
+	/**
+	 * 通知插件
+	 */
+	[
+		"expo-notifications",
+		{
+			icon: "./assets/images/splash-icon.png",
+			color: "#ffffff",
+			defaultChannel: "default",
+			sounds: [],
+
+			// true = 启用 iOS 后台远程推送 capability
+			enableBackgroundRemoteNotifications: false,
+		},
+	],
 ] as unknown as ExpoPlugins;
 
 export default (): ExpoConfig => ({
@@ -208,7 +213,7 @@ export default (): ExpoConfig => ({
 			// false = 声明未使用需出口管制的非豁免加密，App Store 上架问卷通常选 No
 			ITSAppUsesNonExemptEncryption: false,
 		},
-		appleTeamId: "BV3PMNNNFY",
+		appleTeamId: "GTN9QQ56JH",
 		// 隐私清单
 		privacyManifests: {},
 	},
