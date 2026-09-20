@@ -6,6 +6,7 @@ export { default as Home } from "./home";
 export { default as About } from "./about";
 export { default as Feed } from "./feed";
 export { default as FeedPostDetail } from "./feed/post-detail";
+export { default as DemoHub } from "./demo";
 export { default as StackPage } from "./stack-page";
 export { default as StackToolbar } from "./stack-toolbar";
 export { default as DrawerPage } from "./drawer-page";

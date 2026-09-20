@@ -7,6 +7,7 @@ export const ROUTES = {
 	linking: "/linking",
 	settingsPermissions: "/settings/permissions",
 	feed: "/feed",
+	demo: "/demo",
 	stackPage: "/stack-page",
 	stackToolbar: "/stack-toolbar",
 	drawerPage: "/drawer-page",
