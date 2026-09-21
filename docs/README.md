@@ -14,7 +14,7 @@
 - [Expo 主文档 Next 链](./expo/README.md)：从创建项目开始，学习开发环境、界面、插件、调试、分发与 Expo 核心概念。
 - [Guides Overview 起点链](./expo/guides-overview/README.md)：从官方 Guides 总览开始。
 - [EAS 起点链](./expo/eas/README.md)：从 Expo Application Services 总览开始。
-- [Expo SDK `versions/latest` 参考链](./expo/versions-latest/README.md)：滚动更新的 API / 配置参考；每篇标注 Latest 与项目 SDK 56 的版本差异。
+- [Expo SDK `versions/latest` 参考链](./expo/versions-latest/README.md)：沿官方 Next 整理 SDK 配置与 API、第三方库、技术规范及 Expo CLI 工具；有版本化文档时标注与项目 SDK 56 的差异。
 - [Tutorial Overview 起点链](./expo/tutorial-overview/README.md)：从 Expo / EAS 教程概览开始。
 
 ## 阅读说明

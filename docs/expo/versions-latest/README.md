@@ -1,10 +1,10 @@
 # Expo SDK `versions/latest` 参考链
 
-本模块从 [Expo SDK reference: latest](https://docs.expo.dev/versions/latest/) 开始，按官方页脚 **Next** 继续。此模块描述滚动更新的最新 SDK 参考页，不是项目锁定版本的文档。
+本模块从 [Expo SDK reference: latest](https://docs.expo.dev/versions/latest/) 开始，按官方页脚 **Next** 连续整理。链路先经过滚动更新的 SDK 配置与 API、Expo UI 和第三方库，随后进入全局技术规范与 Expo CLI 工具页；后者未按 SDK 版本分路由，正文会说明其版本范围。它不是项目锁定版本的文档。
 
 ## 版本边界
 
-截至 2026-09-20，`versions/latest` 页面版本表首列最新稳定版本 **Expo SDK 57.0.0**；表中也列出 SDK 56.0.0。当前项目 `package.json` 使用 `expo ~56.0.11`，配套 SDK 56.0.0 文档为 [官方精确版本参考](https://docs.expo.dev/versions/v56.0.0/)。Latest URL 会随 Expo 发布而变化。每篇会标明其来源来自 Latest；当代码 / 属性只在最新版本页面出现时，不宣称其在 SDK 56 可用，须再对照 v56 页面和本地依赖。
+截至 2026-09-20，`versions/latest` 页面版本表首列最新稳定版本 **Expo SDK 57.0.0**；表中也列出 SDK 56.0.0。当前项目 `package.json` 使用 `expo ~56.0.11`，配套 SDK 56.0.0 文档为 [官方精确版本参考](https://docs.expo.dev/versions/v56.0.0/)。Latest URL 会随 Expo 发布而变化。SDK / Expo UI 版本化页面会标出其 Latest 与 SDK v56 差异；技术规范和 CLI 等未版本化页面会在页首标明规范版本或更新日期，不能直接视为 SDK 56 API。
 
 ## 连续页面
 

@@ -19,7 +19,7 @@ npx @react-native-community/cli codegen --help
 |---|---|
 | `--verbose` | 输出更详细日志 |
 | `--path <path>` | RN 工程根目录，默认当前工作目录 |
-| `--platform <android|ios|all>` | 生成目标平台，默认 all |
+| `--platform <android\|ios\|all>` | 生成目标平台，默认 all |
 | `--outputPath <path>` | 指定生成文件输出目录 |
 
 ## 常见命令

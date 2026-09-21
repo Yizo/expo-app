@@ -134,7 +134,7 @@ Universal Links 还需要在 Apple developer 网站配置关联域名与应用�
 |---|---|
 | **addEventListener('url', handler)** | 订阅已运行应用接收的链接。 |
 | **canOpenURL(url)** | Promise<boolean>：检查系统是否能打开 URL；调用权限查询受平台配置约束。 |
-| **getInitialURL()** | Promise<string|null>：读取冷启动时的入口链接。 |
+| **getInitialURL()** | Promise<string\|null>：读取冷启动时的入口链接。 |
 | **openURL(url)** | 请求系统打开 URL；失败可能 reject。 |
 | **openSettings()** | 打开应用的系统设置页。 |
 | **sendIntent(action, extras?)** | Android：发起原生 Intent，可传字符串/数字/布尔 extras。 |

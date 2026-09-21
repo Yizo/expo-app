@@ -632,7 +632,7 @@ import { createWidget, createLiveActivity } from 'expo-widgets';
 | --- | --- | --- |
 | `LiveActivity.addPushTokenListener(listener)` | `EventSubscription` | 监听某一个活动的 APNs token；事件含 `activityId`、`pushToken`。 |
 | `LiveActivity.end(dismissalPolicy?, props?, contentDate?)` | `Promise<void>` | 结束活动，可附最终 props 与数据生成时间。比之前内容时间更旧的更新会被系统忽略。 |
-| `LiveActivity.getPushToken()` | `Promise<string | null>` | 获取此活动专属 token；推送未启用或 token 尚未生成时为 `null`。 |
+| `LiveActivity.getPushToken()` | `Promise<string \| null>` | 获取此活动专属 token；推送未启用或 token 尚未生成时为 `null`。 |
 | `LiveActivity.update(props)` | `Promise<void>` | 更新活动 props 并刷新 UI。 |
 | `LiveActivityFactory.getInstances()` | `LiveActivity<T>[]` | 获取此类型所有正在显示的活动。 |
 | `LiveActivityFactory.start(props, url?)` | `LiveActivity<T>` | 创建并启动活动，可关联 deep link URL。 |

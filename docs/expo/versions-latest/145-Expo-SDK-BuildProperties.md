@@ -218,7 +218,7 @@ Android 11 及以后对 App 可查询的其他 package 有过滤声明。`manife
 | `forceStaticLinking?` | `useFrameworks!` 开启时，将特定 Pod 强制静态链接；可绕开部分动态 framework / modular header 问题。 |
 | `networkInspector?` | 控制 Network Inspector，默认 `true`。 |
 | `privacyManifestAggregationEnabled?` | 汇总 Pods 的 `PrivacyInfo.xcprivacy` 到单个 manifest；关闭时需要手动汇总。 |
-| `useFrameworks?` | `'static' | 'dynamic'`，决定 CocoaPods 使用 framework 而非静态库。 |
+| `useFrameworks?` | `'static' \| 'dynamic'`，决定 CocoaPods 使用 framework 而非静态库。 |
 | `usePrecompiledModules?` | 使用 Expo 模块 XCFramework 而不是从源码构建；Latest 默认 `true`，SDK v56 默认 `false`。 |
 
 附加 Pod 的完整配置可以带版本、Git ref、本地路径或自定义 podspec；示例：
@@ -249,7 +249,7 @@ Android 11 及以后对 App 可查询的其他 package 有过滤声明。`manife
 | 字段 | 作用与默认 / 版本边界 |
 | --- | --- |
 | `buildReactNativeFromSource?` | 从源码构建 React Native；会显著增加构建时间。默认 `false`。 |
-| `reactNativeReleaseLevel?` | `'stable' | 'canary' | 'experimental'`，控制 React Native 内部发布级别；默认 `'stable'`。 |
+| `reactNativeReleaseLevel?` | `'stable' \| 'canary' \| 'experimental'`，控制 React Native 内部发布级别；默认 `'stable'`。 |
 | `useHermesV1?` | 使用 Hermes V1。SDK v56 默认 `false`；SDK 57 Latest 默认 `true`，作为版本迁移时的重点差异。 |
 
 调用插件实现时的 API 有 `BuildProperties.withBuildProperties(config, props)`（给 Expo config 加入插件配置）以及 `BuildProperties.resolveConfigValue(config, platform, key)`（读取某个共享项并让 platform 专用值优先）。正常 app config 多用插件，不需要直接调用这两个 helper。

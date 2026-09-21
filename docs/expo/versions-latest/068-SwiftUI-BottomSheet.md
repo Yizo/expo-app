@@ -695,7 +695,7 @@ export default function BottomSheetWithScrollableContentExample() {
 | isPresented | boolean | sheet 当前是否显示。 |
 | onDismiss | () => void，可选 | sheet 完全关闭后调用。 |
 | onIsPresentedChange | (isPresented: boolean) => void | sheet 状态变化回调。 |
-| CommonViewModifierProps | SwiftUI view 通用修饰属性。 |
+| CommonViewModifierProps | - | SwiftUI view 通用修饰属性。 |
 
 ## 关键名词
 

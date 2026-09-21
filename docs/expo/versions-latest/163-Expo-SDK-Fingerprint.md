@@ -224,7 +224,7 @@ console.log(betweenSnapshots);
 | `FileHookTransformSource` | 文件来源 `{ type: 'file', filePath }` 或内容来源 `{ type: 'contents', id }`。 |
 | `FileHookTransformFunction` | 参数为来源、chunk、EOF 标志和编码；返回 `Buffer`、字符串或 `null`。 |
 | `Config` | 根目录 `fingerprint.config.js` 支持的 `Options` 子集，并额外允许 `sourceSkips` 用字符串名称配置。 |
-| `Platform` / `ProjectWorkflow` | 平台 `'android' | 'ios'`；workflow `'generic' | 'managed' | 'unknown'`。 |
+| `Platform` / `ProjectWorkflow` | 平台 `'android' \| 'ios'`；workflow `'generic' \| 'managed' \| 'unknown'`。 |
 
 ## `SourceSkips` 位掩码
 

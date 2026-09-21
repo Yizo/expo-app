@@ -440,7 +440,7 @@ db.loadExtensionSync('/path/to/custom-extension');
 | SQLiteBindParams / BindValue | 命名对象或数组 / variadic；值为 string / number / null / boolean / BLOB。 |
 | DatabaseChangeEvent | databaseFilePath、databaseName、rowId、tableName；须 enableChangeListener。 |
 | Changeset | Uint8Array。 |
-| SQLiteStorageSetItemUpdateFunction | (prevValue: string | null) => string。 |
+| SQLiteStorageSetItemUpdateFunction | (prevValue: string \| null) => string。 |
 | SQLiteTaggedQuery<T> | PromiseLike；await 默认对象数组，另有 first / values / each / 同步变体。 |
 | SQLiteStorage | AsyncStorage 风格 CRUD / multi-key / key enumeration，含 async / sync。 |
 | SQLiteSession | attach / close session，创建、应用、反转 changeset。 |

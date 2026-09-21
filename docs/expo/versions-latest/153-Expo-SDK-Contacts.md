@@ -335,8 +335,8 @@ export function LimitedContactsControls() {
 | 姓名 | `getGivenName()`、`getMiddleName()`、`getFamilyName()`、`getFullName()`、`getPrefix()`、`getSuffix()` | Android / iOS；`getFullName()` 是只读合成姓名，平台格式可能不同。 |
 | 工作 / 发音姓名 | `getCompany()`、`getDepartment()`、`getJobTitle()`、`getPhoneticCompanyName()`、`getPhoneticGivenName()`、`getPhoneticMiddleName()`、`getPhoneticFamilyName()` | Android / iOS。 |
 | 联系方式列表 | `getAddresses()`、`getEmails()`、`getPhones()`、`getUrlAddresses()`、`getRelations()` | Android / iOS。 |
-| 平台特有联系方式 | `getExtraNames()`、`getIsFavourite()` | Android；`getImAddresses()`、`getSocialProfiles()` | iOS。 |
-| 生日 / 备注 | `getBirthday()`、`getMaidenName()`、`getNickname()`、`getNonGregorianBirthday()` | iOS；`getNote()` | Android / iOS，但读取 iOS note 需要额外 entitlement。 |
+| 平台特有联系方式 | `getExtraNames()`、`getIsFavourite()` | Android：`getExtraNames()`、`getIsFavourite()`；iOS：`getImAddresses()`、`getSocialProfiles()`。 |
+| 生日 / 备注 | `getBirthday()`、`getMaidenName()`、`getNickname()`、`getNonGregorianBirthday()` | iOS：以上生日字段；Android / iOS：`getNote()`，但读取 iOS note 需要额外 entitlement。 |
 | 图片 | `getImage()`、`getThumbnail()` | Android / iOS；返回本地图片 URI 或 `null`，缩略图为只读。 |
 | 静态查询 | `getCount()`、`hasAny()` | Android / iOS。 |
 

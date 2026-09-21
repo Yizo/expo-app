@@ -20,7 +20,7 @@
 |---|---|---|---|---|
 | `string` | `?string` | `string \| null` | `String` | `NSString` |
 | `boolean` | `?boolean` | `boolean \| null` | `Boolean` | `NSNumber` |
-| Object literal | `?{| foo: string |}` | nullable object literal | 表格未给出直接映射 | 表格未给出直接映射 |
+| Object literal | `?{\| foo: string \|}` | nullable object literal | 表格未给出直接映射 | 表格未给出直接映射 |
 | `Object` | `?Object` | `Object \| null` | `ReadableMap` | 未类型化字典（`NSDictionary` / `@` 映射） |
 | `Array<T>` | `?Array<T>` | `Array<T> \| null` | `ReadableArray` | `NSArray` |
 | `Function` | `?Function` | `Function \| null` | 表格未给出 | 表格未给出 |
